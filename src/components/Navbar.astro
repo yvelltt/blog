@@ -1,29 +1,35 @@
 ---
+import Articles from "../pages/Articles.astro";
+import Projects from "../pages/Projects.astro";
 import NavButton from "./index/NavButton.astro";
+import SectionContainer from "./SectionContainer.astro";
 ---
 
-<nav
-  class="flex gap-4 flex-wrap text-icons rounded-full border-[1px] p-1 border-hub-border bg-hub-light-bg-2"
->
-  <NavButton class="tab-btn" data-target="projects">Projectos</NavButton>
-  <NavButton class="tab-btn" data-target="articles">Artículos</NavButton>
-  <NavButton class="tab-btn" data-target="books">Libros</NavButton>
-</nav>
+<div class="flex flex-col">
+  <nav
+    class="flex gap-1 text-icons rounded-full border-[1px] p-[2px] border-hub-border bg-hub-light-bg-2 whitespace-nowrap overflow-x-auto scrollbar-hide"
+  >
+    <NavButton class="tab-btn" data-target="projects">Projects</NavButton>
+    <NavButton class="tab-btn" data-target="articles">Articles</NavButton>
+    <NavButton class="tab-btn" data-target="books">Career Path</NavButton>
+    <NavButton class="tab-btn" data-target="books">BooksMarks</NavButton>
+    <NavButton class="tab-btn" data-target="books">Education Hub</NavButton>
+    <NavButton class="tab-btn" data-target="books">Fun Hobbies</NavButton>
+    <NavButton class="tab-btn" data-target="books">Shop Now</NavButton>
+  </nav>
 
-<main>
-  <section id="projects" class="tab-content mt-8">
-    <h2>Proyectos</h2>
-    <p>Contenido sobre proyectos...</p>
-  </section>
-  <section id="articles" class="tab-content mt-8 hidden">
-    <h2>Artículos</h2>
-    <p>Contenido sobre artículos...</p>
-  </section>
-  <section id="books" class="tab-content mt-8 hidden">
-    <h2>Libros</h2>
-    <p>Contenido sobre libros...</p>
-  </section>
-</main>
+  <main class="mt-6">
+    <SectionContainer id="projects" class="tab-content mt-0 mb-0">
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="articles" class="tab-content hidden mt-0 mb-0">
+      <Articles />
+    </SectionContainer>
+    <SectionContainer id="books" class="tab-content hidden mt-0 mb-0">
+      <h2>Libros</h2>
+    </SectionContainer>
+  </main>
+</div>
 
 <script>
   const buttons = document.querySelectorAll(".tab-btn");
@@ -32,7 +38,12 @@ import NavButton from "./index/NavButton.astro";
   // Establece el botón activo por defecto
   const defaultActive = document.querySelector('[data-target="projects"]');
   if (defaultActive) {
-    defaultActive.classList.add("bg-white", "drop-shadow-md");
+    defaultActive.classList.add(
+      "bg-white",
+      "drop-shadow-md",
+      "text-hub-title",
+      "font-bold",
+    );
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
       projectsSection.classList.remove("hidden");
@@ -45,9 +56,19 @@ import NavButton from "./index/NavButton.astro";
 
       // Actualiza el estado de los botones
       buttons.forEach((btn) =>
-        btn.classList.remove("bg-white", "drop-shadow-md"),
+        btn.classList.remove(
+          "bg-white",
+          "drop-shadow-md",
+          "text-hub-title",
+          "font-bold",
+        ),
       );
-      button.classList.add("bg-white", "drop-shadow-md");
+      button.classList.add(
+        "bg-white",
+        "drop-shadow-md",
+        "text-hub-title",
+        "font-bold",
+      );
 
       // Oculta todas las secciones
       contents.forEach((content) => content.classList.add("hidden"));
@@ -59,6 +80,13 @@ import NavButton from "./index/NavButton.astro";
           targetElement.classList.remove("hidden");
         }
       }
+
+      // Desliza el botón al centro del nav
+      button.scrollIntoView({
+        behavior: "smooth", // Deslizamiento suave
+        block: "nearest", // Mantiene la posición vertical
+        inline: "center", // Centra horizontalmente
+      });
     });
   });
 </script>

@@ -25,6 +25,17 @@ html {
   /* line-height: 1.6; */
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE y Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, y Opera */
+}
 
 /* body {
   margin: 0;
