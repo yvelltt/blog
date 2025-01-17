@@ -1,6 +1,7 @@
 ---
 import Hero from "../components/index/Hero.astro";
 import SocialMedia from "../components/index/SocialMedia.astro";
+import Navbar from "../components/Navbar.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -15,11 +16,13 @@ import Layout from "../layouts/Layout.astro";
 	<!-- <Welcome /> -->
 
 	<main class="mx-6 mt-4">
-		<SectionContainer class="mb-6 border-2 flex flex-col gap-y-6">
+		<SectionContainer class="mb-6 flex flex-col gap-y-6">
 			<Hero />
 			<SocialMedia />
 		</SectionContainer>
-		<SectionContainer class="mb-6" />
+		<SectionContainer class="mb-6">
+			<Navbar />
+		</SectionContainer>
 
 		<p>data</p>
 	</main>

@@ -1,0 +1,64 @@
+---
+import NavButton from "./index/NavButton.astro";
+---
+
+<nav
+  class="flex gap-4 flex-wrap text-icons rounded-full border-[1px] p-1 border-hub-border bg-hub-light-bg-2"
+>
+  <NavButton class="tab-btn" data-target="projects">Projectos</NavButton>
+  <NavButton class="tab-btn" data-target="articles">Artículos</NavButton>
+  <NavButton class="tab-btn" data-target="books">Libros</NavButton>
+</nav>
+
+<main>
+  <section id="projects" class="tab-content mt-8">
+    <h2>Proyectos</h2>
+    <p>Contenido sobre proyectos...</p>
+  </section>
+  <section id="articles" class="tab-content mt-8 hidden">
+    <h2>Artículos</h2>
+    <p>Contenido sobre artículos...</p>
+  </section>
+  <section id="books" class="tab-content mt-8 hidden">
+    <h2>Libros</h2>
+    <p>Contenido sobre libros...</p>
+  </section>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  // Establece el botón activo por defecto
+  const defaultActive = document.querySelector('[data-target="projects"]');
+  if (defaultActive) {
+    defaultActive.classList.add("bg-white", "drop-shadow-md");
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.classList.remove("hidden");
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.getAttribute("data-target");
+
+      // Actualiza el estado de los botones
+      buttons.forEach((btn) =>
+        btn.classList.remove("bg-white", "drop-shadow-md"),
+      );
+      button.classList.add("bg-white", "drop-shadow-md");
+
+      // Oculta todas las secciones
+      contents.forEach((content) => content.classList.add("hidden"));
+
+      // Muestra la sección seleccionada
+      if (target) {
+        const targetElement = document.getElementById(target);
+        if (targetElement) {
+          targetElement.classList.remove("hidden");
+        }
+      }
+    });
+  });
+</script>
