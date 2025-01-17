@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'SF Pro Display';
-  src: url('/fonts/SFPro/SFProDisplayRegular.otf') format('opentype');
+  src: url('/public/fonts/SFPro/SFProDisplayRegular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SF Pro Display';
-  src: url('/fonts/SFPro/SFProDisplayBold.otf') format('opentype');
+  src: url('/public/fonts/SFPro/SFProDisplayBold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SF Pro Display';
-  src: url('/fonts/SFPro/SFProDisplayItalic.otf') format('opentype');
+  src: url('/public/fonts/SFPro/SFProDisplayItalic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
 }
@@ -26,16 +26,16 @@ html {
 }
 
 
-body {
-  /* margin: 0;
-  padding: 0; */
-  /* background-color: hsl(218, 28%, 13%); */
-  /* color: hsl(0, 0%, 100%); */
+/* body {
+  margin: 0;
+  padding: 0;
+  background-color: hsl(218, 28%, 13%);
+  color: hsl(0, 0%, 100%);
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   min-height: 100vh;
-}
+} */
 
 /* h1,
 h2,

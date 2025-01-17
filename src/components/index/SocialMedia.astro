@@ -1,0 +1,32 @@
+---
+import ArrowUpRight from "../../icons/ArrowUpRight.astro";
+import GitHub from "../../icons/GitHub.astro";
+import Instagram from "../../icons/Instagram.astro";
+import LinkedIn from "../../icons/LinkedIn.astro";
+import SocialPill from "../../icons/SocialPill.astro";
+import Web from "../../icons/Web.astro";
+---
+
+<!-- Aside para links secundarios -->
+<aside>
+  <div class="flex gap-2 flex-wrap text-icons">
+    <SocialPill
+      class="px-4 gap-1 font-medium text-sm bg-btn-gradient text-white w-auto drop-shadow-md"
+    >
+      Currículo
+      <ArrowUpRight class="size-4" />
+    </SocialPill>
+    <SocialPill href="https://www.github.com/justcoddev">
+      <Web class="size-4" />
+    </SocialPill>
+    <SocialPill href="https://www.github.com/justcoddev">
+      <GitHub class="size-4" />
+    </SocialPill>
+    <SocialPill href="https://www.github.com/justcoddev">
+      <LinkedIn class="size-4" />
+    </SocialPill>
+    <SocialPill href="https://www.github.com/justcoddev">
+      <Instagram class="size-4" />
+    </SocialPill>
+  </div>
+</aside>

@@ -1,5 +1,7 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import Hero from "../components/index/Hero.astro";
+import SocialMedia from "../components/index/SocialMedia.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -11,14 +13,14 @@ import Layout from "../layouts/Layout.astro";
 	description="Explora libros, artículos, pasatiempos y recursos educativos en el hub personal de JustCodDev. Descubre lo mejor de mi carrera y mis recomendaciones."
 >
 	<!-- <Welcome /> -->
-	<main class="mt-24 max-w-[1000px]">
-		<h1 class="text-2xl font-bold">Link in bio esto E RALEWAY</h1>
-		<p class="">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-			reprehenderit repellendus officia quod. Incidunt doloribus, illo ex
-			assumenda ipsa dignissimos necessitatibus dolores, placeat perferendis
-			corrupti obcaecati deleniti dolorum iure recusandae?
-		</p>
+
+	<main class="mx-6 mt-4">
+		<SectionContainer class="mb-6 border-2 flex flex-col gap-y-6">
+			<Hero />
+			<SocialMedia />
+		</SectionContainer>
+		<SectionContainer class="mb-6" />
+
 		<p>data</p>
 	</main>
 </Layout>
