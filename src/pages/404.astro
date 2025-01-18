@@ -1,0 +1,26 @@
+---
+import NoDataCard from "../components/NoDataCard.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import ArrowLeft from "../icons/ArrowLeft.astro";
+import ArrowRight from "../icons/ArrowRight.astro";
+import SocialPill from "../icons/SocialPill.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 - Not Found" description="Not Found">
+  <SectionContainer class="px-4">
+    <NoDataCard />
+    <div class="flex justify-center content-center items-center">
+      <SocialPill
+        class="px-4 mt-2 gap-1 font-medium text-sm bg-btn-gradient text-white w-auto drop-shadow-md group"
+        href="/"
+        target="_self"
+      >
+        <ArrowRight
+          class="size-4 transition duration-300 ease-in-out group-hover:-rotate-180"
+        />
+        Volver
+      </SocialPill>
+    </div>
+  </SectionContainer>
+</Layout>

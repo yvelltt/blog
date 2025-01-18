@@ -1,0 +1,29 @@
+---
+import CardDocuments from "../components/CardDocuments.astro";
+import NoDataCard from "../components/NoDataCard.astro";
+// import { cardsData } from "../data/articles.js";
+const cardsData: any[] = [];
+---
+
+<div class="flex flex-col gap-y-3">
+  {
+    cardsData.length > 0 ? (
+      cardsData.map((card) => (
+        <CardDocuments
+          id={card.id}
+          href={card.href}
+          title={card.title}
+          subtitle={card.subtitle}
+          imageSrc={card.imageSrc}
+          imageAlt={card.imageAlt}
+        />
+      ))
+    ) : (
+      <NoDataCard
+        message="Oops, no hay datos para mostrar."
+        subtitle="¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+        imageSrc="/src/assets/img/my-notion-face-transparent.png"
+      />
+    )
+  }
+</div>

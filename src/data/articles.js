@@ -3,7 +3,7 @@ export const cardsData = [
     id: "doc-1",
     href: "https://medium.com/article-1",
     title: "Lorem ipsum dolor sit amet consectetur. Nec nibh vehicula.",
-    subtitle: "www.medium.com",
+    subtitle: "Lorem ipsum dolor sit amet consectetur.",
     imageSrc: "/src/assets/img/my-notion-face-customized.png",
     imageAlt: "Ícono del aplicativo",
 
@@ -12,7 +12,7 @@ export const cardsData = [
     id: "card-2",
     href: "https://medium.com/article-2",
     title: "Como começar em UI/UX Design: Guia Prático",
-    subtitle: "www.medium.com",
+    subtitle: "Lorem ipsum dolor sit amet consectetur.",
     imageSrc: "/src/assets/img/my-notion-face-portrait.png",
     imageAlt: "Imagen de portafolio",
 
@@ -21,7 +21,7 @@ export const cardsData = [
     id: "card-3",
     href: "https://medium.com/article-1",
     title: "Princípios de Design Centrado no Usuário",
-    subtitle: "www.medium.com",
+    subtitle: "Lorem ipsum dolor sit amet consectetur.",
     imageSrc: "/src/assets/img/my-notion-face-portrait.png",
     imageAlt: "Ícono del proyecto de prueba",
 
@@ -30,7 +30,7 @@ export const cardsData = [
     id: "card-4",
     href: "https://medium.com/article-1",
     title: "Como começar em UI/UX Design: Guia Prático",
-    subtitle: "www.medium.com",
+    subtitle: "Lorem ipsum dolor sit amet consectetur.",
     imageSrc: "/src/assets/img/my-notion-face-portrait.png",
     imageAlt: "Logo de Vercel",
 

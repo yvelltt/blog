@@ -1,9 +1,12 @@
 ---
-import Articles from "../pages/Articles.astro";
-import BooksMarks from "../pages/BooksMarks.astro";
-import Projects from "../pages/Projects.astro";
+import BooksMarks from "./BooksMarks.astro";
+import Projects from "./Projects.astro";
+import Articles from "./Articles.astro";
 import NavButton from "./index/NavButton.astro";
 import SectionContainer from "./SectionContainer.astro";
+import EducationHub from "./EducationHub.astro";
+import FunHobbies from "./FunHobbies.astro";
+import ShopNow from "./ShopNow.astro";
 ---
 
 <div class="flex flex-col">
@@ -31,13 +34,13 @@ import SectionContainer from "./SectionContainer.astro";
       <BooksMarks />
     </SectionContainer>
     <SectionContainer id="educationHub" class="tab-content hidden mt-0 mb-0">
-      <p>educationHub</p>
+      <EducationHub />
     </SectionContainer>
     <SectionContainer id="funHobbies" class="tab-content hidden mt-0 mb-0">
-      <p>funHobbies</p>
+      <FunHobbies />
     </SectionContainer>
     <SectionContainer id="shopNow" class="tab-content hidden mt-0 mb-0">
-      <p>shopNow</p>
+      <ShopNow />
     </SectionContainer>
   </main>
 </div>
