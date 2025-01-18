@@ -1,5 +1,6 @@
 ---
 import Articles from "../pages/Articles.astro";
+import BooksMarks from "../pages/BooksMarks.astro";
 import Projects from "../pages/Projects.astro";
 import NavButton from "./index/NavButton.astro";
 import SectionContainer from "./SectionContainer.astro";
@@ -11,11 +12,12 @@ import SectionContainer from "./SectionContainer.astro";
   >
     <NavButton class="tab-btn" data-target="projects">Projects</NavButton>
     <NavButton class="tab-btn" data-target="articles">Articles</NavButton>
-    <NavButton class="tab-btn" data-target="books">Career Path</NavButton>
-    <NavButton class="tab-btn" data-target="books">BooksMarks</NavButton>
-    <NavButton class="tab-btn" data-target="books">Education Hub</NavButton>
-    <NavButton class="tab-btn" data-target="books">Fun Hobbies</NavButton>
-    <NavButton class="tab-btn" data-target="books">Shop Now</NavButton>
+    <NavButton class="tab-btn" data-target="booksMarks">BooksMarks</NavButton>
+    <NavButton class="tab-btn" data-target="educationHub"
+      >Education Hub</NavButton
+    >
+    <NavButton class="tab-btn" data-target="funHobbies">Fun Hobbies</NavButton>
+    <NavButton class="tab-btn" data-target="shopNow">Shop Now</NavButton>
   </nav>
 
   <main class="mt-6">
@@ -25,8 +27,17 @@ import SectionContainer from "./SectionContainer.astro";
     <SectionContainer id="articles" class="tab-content hidden mt-0 mb-0">
       <Articles />
     </SectionContainer>
-    <SectionContainer id="books" class="tab-content hidden mt-0 mb-0">
-      <h2>Libros</h2>
+    <SectionContainer id="booksMarks" class="tab-content hidden mt-0 mb-0">
+      <BooksMarks />
+    </SectionContainer>
+    <SectionContainer id="educationHub" class="tab-content hidden mt-0 mb-0">
+      <p>educationHub</p>
+    </SectionContainer>
+    <SectionContainer id="funHobbies" class="tab-content hidden mt-0 mb-0">
+      <p>funHobbies</p>
+    </SectionContainer>
+    <SectionContainer id="shopNow" class="tab-content hidden mt-0 mb-0">
+      <p>shopNow</p>
     </SectionContainer>
   </main>
 </div>

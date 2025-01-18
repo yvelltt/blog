@@ -2,9 +2,9 @@ export const cardsData = [
   {
     id: "doc-1",
     href: "https://medium.com/article-1",
-    title: "Lorem ipsum dolor sit amet consectetur.",
+    title: "Lorem ipsum dolor sit amet consectetur. Nec nibh vehicula.",
     subtitle: "www.medium.com",
-    imageSrc: "/src/assets/img/my-notion-face-portrait.png",
+    imageSrc: "/src/assets/img/my-notion-face-customized.png",
     imageAlt: "Ícono del aplicativo",
 
   },
