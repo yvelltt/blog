@@ -1,11 +1,44 @@
 ---
-const { class: className, id } = Astro.props;
+import ArrowUpRight from "../icons/ArrowUpRight.astro";
+
+const {
+  id = "",
+  href = "#",
+  title = "Título predeterminado",
+  subtitle = "Subtítulo predeterminado",
+  imageSrc = "",
+  imageAlt = "Ícono predeterminado",
+} = Astro.props;
 ---
 
 <div
   id={id}
   data-section={id}
-  class=`${className} border-[1px] border-hub-border `
+  class="p-1 rounded-lg flex items-center justify-between border-[1px] border-hub-border hover:drop-shadow-sm hover:bg-hub-light-bg-2 group"
 >
-  <slot />
+  <!-- Contenedor izquierdo -->
+  <div class="flex items-center">
+    <div
+      class="rounded-lg border-[1px] size-9 flex items-center justify-center border-hub-border overflow-hidden"
+    >
+      <img src={imageSrc} alt={imageAlt} class="w-full h-full object-cover" />
+    </div>
+
+    <div class="pl-4 flex flex-col justify-start">
+      <h2 class="font-medium text-base text-hub-title">{title}</h2>
+      <small class="text-hub-subtitle text-xs">{subtitle}</small>
+    </div>
+  </div>
+
+  <!-- Contenedor derecho -->
+  <a
+    href={href}
+    class="relative border-none justify-end text-hub-subtitle group flex items-center"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <ArrowUpRight
+      class="size-6 transition-transform duration-300 ease-in-out group-hover:rotate-45"
+    />
+  </a>
 </div>

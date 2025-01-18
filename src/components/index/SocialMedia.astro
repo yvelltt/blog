@@ -11,10 +11,12 @@ import Web from "../../icons/Web.astro";
 <aside>
   <div class="flex gap-2 flex-wrap text-icons">
     <SocialPill
-      class="px-4 gap-1 font-medium text-sm bg-btn-gradient text-white w-auto drop-shadow-md"
+      class="px-4 gap-1 font-medium text-sm bg-btn-gradient text-white w-auto drop-shadow-md group"
     >
       Currículo
-      <ArrowUpRight class="size-4" />
+      <ArrowUpRight
+        class="size-4 transition duration-300 ease-in-out group-hover:rotate-45"
+      />
     </SocialPill>
     <SocialPill href="https://www.github.com/justcoddev">
       <Web class="size-4" />

@@ -1,21 +1,19 @@
 ---
 import Card from "../components/Card.astro";
+import { cardsData } from "../data/projects.js";
 ---
 
 <div class="flex flex-col gap-y-3">
-  <Card id="" class="h-16 rounded-lg">
-    <div>misporjects</div>
-  </Card>
-  <Card id="" class="">
-    <div>misporjects</div>
-  </Card>
-  <Card id="" class="">
-    <div>misporjects</div>
-  </Card>
-  <Card id="" class="">
-    <div>misporjects</div>
-  </Card>
-  <Card id="" class="">
-    <div>misporjects</div>
-  </Card>
+  {
+    cardsData.map((card) => (
+      <Card
+        id={card.id}
+        href={card.href}
+        title={card.title}
+        subtitle={card.subtitle}
+        imageSrc={card.imageSrc}
+        imageAlt={card.imageAlt}
+      />
+    ))
+  }
 </div>
