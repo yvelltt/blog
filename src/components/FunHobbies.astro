@@ -1,8 +1,8 @@
 ---
 import CardDocuments from "../components/CardDocuments.astro";
 import NoDataCard from "../components/NoDataCard.astro";
-// import { cardsData } from "../data/funhobbies.js";
-const cardsData: any[] = [];
+import { cardsData } from "../data/funhobbies.js";
+// const cardsData: any[] = [];
 ---
 
 <div class="flex flex-col gap-y-3">
@@ -22,7 +22,7 @@ const cardsData: any[] = [];
       <NoDataCard
         message="Oops, no hay datos para mostrar."
         subtitle="¡Pero no te preocupes, siempre hay algo interesante esperándote!"
-        imageSrc="/src/assets/img/my-notion-face-transparent.png"
+        imageSrc="/src/assets/img/notion/white/my-notion-face-transparent_9.png"
       />
     )
   }
