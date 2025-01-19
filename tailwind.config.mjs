@@ -32,7 +32,7 @@ export default {
 				'hub-border-dark': '#052B2E',
 				'hub-title-dark': '#FFFFFF',
 				'hub-subtitle-dark': '#999999',
-				'hub-background-nav-dark': '#1A1A1A',
+				'hub-background-nav-dark': '#080C11',
 
 
 			},

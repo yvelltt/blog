@@ -10,14 +10,25 @@ const {
 ---
 
 <div
-  class="rounded-lg flex flex-col items-center justify-center gap-4 border-[1px] border-hub-border hover:drop-shadow-md hover:bg-hub-background-nav transition-all duration-300 py-6 px-4 text-center"
+  class="rounded-lg flex flex-col items-center justify-center gap-4 border-[1px]
+   border-hub-border
+   dark:border-hub-border-dark
+   hover:drop-shadow-md
+   hover:bg-hub-background-nav
+    dark:bg-hub-background-nav-dark
+   hover:dark:bg-hub-background-dark
+   transition-all duration-300 py-6 px-4 text-center"
 >
   <!-- Imagen -->
   <img src={imageSrc} alt={imageAlt} class="w-24 h-24 object-contain" />
 
   <!-- Mensaje Principal -->
-  <p class="text-sm text-hub-title font-medium">{message}</p>
+  <p class="text-sm text-hub-title dark:text-hub-title-dark font-medium">
+    {message}
+  </p>
 
   <!-- Subtítulo -->
-  <p class="text-xs text-hub-subtitle">{subtitle}</p>
+  <p class="text-xs text-hub-subtitle dark:text-hub-subtitle-dark">
+    {subtitle}
+  </p>
 </div>
