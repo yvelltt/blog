@@ -24,7 +24,18 @@ const { title, description } = Astro.props;
 		/> -->
 		<title>{title}</title>
 	</head>
-	<body>
+	<!-- <body class=""> -->
+	<body class="dark">
 		<slot />
 	</body>
 </html>
+<style>
+	body {
+		background-color: #101419;
+		/* background-color: #ffffff; */
+	}
+
+	/* .dark {
+		background-color: var(--hub-background-dark);
+	} */
+</style>

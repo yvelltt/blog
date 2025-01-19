@@ -19,14 +19,22 @@ export default {
 
 			},
 			colors: {
+				'hub-background': '#FFFFFF',
+				'hub-border': '#EDEDED',
 				'hub-title': '#121020',
 				'hub-subtitle': '#888888',
-				'hub-light-bg-2': '#FAFAFA',
-				'hub-border': '#EDEDED',
+				'hub-background-nav': '#FAFAFA',
 				'hub-inactive': '#B0B0B0',
-				'hub-background': '#FFFFFF',
-				'hub-color': '#FFFFFF',
+				'hub-text': '#FFFFFF',
 				'icons': '#6E6E6E',
+				// dark
+				'hub-background-dark': '#101419',
+				'hub-border-dark': '#052B2E',
+				'hub-title-dark': '#FFFFFF',
+				'hub-subtitle-dark': '#999999',
+				'hub-background-nav-dark': '#1A1A1A',
+
+
 			},
 			backgroundImage: {
 				'btn-gradient': 'linear-gradient(to right, #825BDD, #5327BA)', // Gradiente para botones
