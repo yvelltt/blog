@@ -10,16 +10,16 @@ export const cardsData = [
     className: "custom-card-class",
     isNew: true
   },
-  {
-    id: "card-2",
-    url: "",
-    href: "https://portfolio.justcoddev.com",
-    title: "Mi Portafolio",
-    subtitle: "portfolio.justcoddev.com",
-    imageSrc: "/src/assets/img/notion/white/my-notion-face-transparent.png",
-    imageAlt: "Imagen de portafolio",
-    className: "custom-card-class-2",
-    isNew: false
-  },
+  // {
+  //   id: "card-2",
+  //   url: "",
+  //   href: "https://portfolio.justcoddev.com",
+  //   title: "Mi Portafolio",
+  //   subtitle: "portfolio.justcoddev.com",
+  //   imageSrc: "/src/assets/img/notion/white/my-notion-face-transparent.png",
+  //   imageAlt: "Imagen de portafolio",
+  //   className: "custom-card-class-2",
+  //   isNew: false
+  // },
 
 ];

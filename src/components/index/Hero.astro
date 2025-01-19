@@ -1,13 +1,41 @@
+---
+import IconChevronDown from "../../icons/IconChevronDown.astro";
+import IconMoon from "../../icons/IconMoon.astro";
+import IconShare2 from "../../icons/IconShare2.astro";
+import IconSun from "../../icons/IconSun.astro";
+import HeroButton from "../HeroButton.astro";
+---
+
 <div>
-  <div>
+  <div class="flex justify-between">
     <img
       class="rounded-full size-24 border border-hub-border shadow-btn-shadow"
       src="/src/assets/img/notion/white/my-notion-face-transparent.png"
       alt="Descripción de la imagen"
     />
+    <div class="flex gap-2 flex-wrap">
+      <HeroButton class="size-8">
+        <IconShare2 class="size-5" />
+      </HeroButton>
+      <HeroButton class="size-8">
+        <IconSun class="size-5" />
+      </HeroButton>
+      <!-- <HeroButton class="size-8">
+        <IconMoon class="size-5" />
+      </HeroButton> -->
+    </div>
   </div>
   <div class="mt-4">
-    <h1 class="font-bold text-2xl text-hub-title">Edison Cruz</h1>
-    <p class="text-base text-hub-subtitle">Software Enginner</p>
+    <h1 class="font-medium text-2xl text-hub-title">Edison Cruz</h1>
+    <p class="text-base text-hub-subtitle">Software Engineer</p>
   </div>
 </div>
+
+<!-- 
+esto es para el idioma
+<HeroButton
+  class="size-8 px-4 gap-1 font-medium text-xs text-hub-title hover:bg-sky-400 w-auto"
+>
+  ES
+  <IconChevronDown class="size-4" />
+</HeroButton> -->
