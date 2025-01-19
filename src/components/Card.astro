@@ -1,21 +1,36 @@
 ---
 import ArrowUpRight from "../icons/ArrowUpRight.astro";
+import NewBadge from "./NewBadge.astro";
 
 const {
   id = "",
+  url = "",
   href = "#",
   title = "Título predeterminado",
   subtitle = "Subtítulo predeterminado",
   imageSrc = "",
   imageAlt = "Ícono predeterminado",
+  isNew = false, // Nueva prop para controlar el badge
 } = Astro.props;
 ---
 
-<div
+<a
   id={id}
+  href={href}
   data-section={id}
-  class="p-1 rounded-lg flex items-center justify-between border-[1px] border-hub-border hover:drop-shadow-sm hover:bg-hub-light-bg-2 group"
+  class="relative p-1 rounded-lg flex items-center justify-between border-[1px] border-hub-border hover:drop-shadow-md hover:bg-hub-light-bg-2 group"
+  target="_blank"
+  rel="noopener noreferrer"
 >
+  <!-- Badge de "New" -->
+  {
+    isNew && (
+      <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-sky-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full shadow-md z-10">
+        New
+      </div>
+    )
+  }
+
   <!-- Contenedor izquierdo -->
   <div class="flex items-center">
     <div
@@ -26,19 +41,12 @@ const {
 
     <div class="pl-4 flex flex-col justify-start">
       <h2 class="font-medium text-base text-hub-title">{title}</h2>
-      <small class="text-hub-subtitle text-xs">{subtitle}</small>
+      <small class="text-hub-subtitle text-xs">{url}</small>
     </div>
   </div>
 
-  <!-- Contenedor derecho -->
-  <a
-    href={href}
-    class="relative border-none justify-end text-hub-subtitle group flex items-center"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <ArrowUpRight
-      class="size-6 transition-transform duration-300 ease-in-out group-hover:rotate-45"
-    />
-  </a>
-</div>
+  <!-- Icono derecho -->
+  <ArrowUpRight
+    class="size-6 text-hub-subtitle transition-transform duration-300 ease-in-out group-hover:rotate-45"
+  />
+</a>
