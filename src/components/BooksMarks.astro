@@ -2,6 +2,8 @@
 import CardDocuments from "../components/CardDocuments.astro";
 import NoDataCard from "../components/NoDataCard.astro";
 import { cardsData } from "../data/bookmarks.js";
+
+// const cardsData: any[] = [];
 ---
 
 <div class="flex flex-col gap-y-3">
@@ -20,8 +22,8 @@ import { cardsData } from "../data/bookmarks.js";
       ))
     ) : (
       <NoDataCard
-        message="Oops, no hay datos para mostrar."
-        subtitle="¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+        message="Oops, there are no bookmarks to display."
+        subtitle="But don't worry, there's always something interesting waiting for you!"
         imageSrc="/src/assets/img/notion/white/my-notion-face-transparent_9.png"
       />
     )
