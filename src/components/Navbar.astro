@@ -13,14 +13,30 @@ import ShopNow from "./ShopNow.astro";
   <nav
     class="flex gap-1 text-hub-inactive rounded-full border-[1px] p-[2px] border-hub-border dark:border-hub-border-dark bg-hub-background-nav dark:bg-hub-background-nav whitespace-nowrap overflow-x-auto scrollbar-hide md:w-max"
   >
-    <NavButton class="tab-btn" data-target="projects">Projects</NavButton>
-    <NavButton class="tab-btn" data-target="articles">Articles</NavButton>
-    <NavButton class="tab-btn" data-target="booksMarks">BooksMarks</NavButton>
-    <NavButton class="tab-btn" data-target="educationHub"
-      >Education Hub</NavButton
+    <NavButton class="tab-btn" aria-label="btn-projects" data-target="projects"
+      >Projects</NavButton
     >
-    <NavButton class="tab-btn" data-target="funHobbies">Fun Hobbies</NavButton>
-    <NavButton class="tab-btn" data-target="shopNow">Shop Now</NavButton>
+    <NavButton class="tab-btn" aria-label="btn-Articles" data-target="articles"
+      >Articles</NavButton
+    >
+    <NavButton
+      class="tab-btn"
+      aria-label="btn-projects"
+      data-target="booksMarks">BooksMarks</NavButton
+    >
+    <NavButton
+      class="tab-btn"
+      aria-label="btn-projects"
+      data-target="educationHub">Education educationHub</NavButton
+    >
+    <NavButton
+      class="tab-btn"
+      aria-label="btn-projects"
+      data-target="funHobbies">Fun Hobbies</NavButton
+    >
+    <NavButton class="tab-btn" aria-label="btn-funHobbies" data-target="shopNow"
+      >Shop Now</NavButton
+    >
   </nav>
 
   <main class="mt-6">
