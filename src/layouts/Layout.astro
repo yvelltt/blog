@@ -37,10 +37,11 @@ const { title, description } = Astro.props;
 
 		<title>{title}</title>
 	</head>
-	<body class="bg-hub-background dark:bg-hub-background-dark">
-		<slot />
-	</body>
+	<body
+		class="bg-hub-background dark:bg-hub-background-dark md:flex md:justify-center"
+	></body><slot />
 </html>
+
 <style>
 	body {
 		/* background-color: #101419; */

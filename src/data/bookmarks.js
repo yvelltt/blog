@@ -119,4 +119,14 @@ export const cardsData = [
     imageAlt: "Logo de Web",
 
   },
+  {
+    id: "card-13",
+    url: "www.shapedivider.app",
+    href: "https://www.shapedivider.app/",
+    title: "Custom Shape Dividers",
+    subtitle: "We created this free tool to make it easier for designers and developers to export a beautiful SVG shape divider for their latest project. We hope you enjoy this tool.",
+    imageSrc: "/src/assets/img/notion/white/my-notion-face-transparent_9.png",
+    imageAlt: "Logo de Web",
+
+  },
 ];
