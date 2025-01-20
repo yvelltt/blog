@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+import "../styles/global.css"; // Importa el CSS desde src/styles
 ---
 
 <!doctype html>
@@ -19,7 +20,7 @@ const { title, description } = Astro.props;
 			href="/img/notion/white/my-notion-face-transparent.png"
 		/>
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="../styles/global.css " />
+		<!-- <link rel="stylesheet" type="css" href="../styles/global.css " /> -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta
