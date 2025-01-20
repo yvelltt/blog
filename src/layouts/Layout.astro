@@ -13,29 +13,37 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/src/assets/img/notion/white/my-notion-face-transparent.png"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="/src/styles/global.css" />
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Raleway:wght@100..900&display=swap"
-			rel="stylesheet"
-		/> -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta
+			property="og:image"
+			content="/src/assets/img/notion/white/my-notion-face-transparent.png"
+		/>
+		<meta property="og:url" content="https://hub.justcoddev.com/" />
+		<meta name="twitter:card" content={description} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta
+			name="twitter:image"
+			content="/src/assets/img/notion/white/my-notion-face-transparent.png"
+		/>
+
 		<title>{title}</title>
 	</head>
-	<body class="">
-		<!-- <body class="dark"> -->
+	<body class="bg-hub-background dark:bg-hub-background-dark">
 		<slot />
 	</body>
 </html>
 <style>
 	body {
 		/* background-color: #101419; */
-		background-color: #ffffff;
+		/* background-color: #ffffff; */
 	}
-
-	/* .dark {
-		background-color: var(--hub-background-dark);
-	} */
 </style>
