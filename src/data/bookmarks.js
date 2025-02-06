@@ -129,4 +129,24 @@ export const cardsData = [
     imageAlt: "Logo de Web",
 
   },
+  {
+    id: "card-14",
+    url: "www.calltoinspiration.com",
+    href: "https://calltoinspiration.com/",
+    title: "CallToInspiration – Small details for very exacting ideas!",
+    subtitle: "Call for inspiration using the purple hat for when you have inspiration blocks or need fresh new ideas. A great tool created by a deisnger for web professionals.",
+    imageSrc: "/img/notion/white/my-notion-face-transparent_9.png",
+    imageAlt: "Logo de Web",
+
+  },
+  {
+    id: "card-15",
+    url: "www.tailwindcss-animated.com",
+    href: "https://www.tailwindcss-animated.com/",
+    title: "Tailwind CSS Animated",
+    subtitle: "Extended animation utilities for Tailwind CSS",
+    imageSrc: "/img/notion/white/my-notion-face-transparent_9.png",
+    imageAlt: "Logo de Web",
+
+  },
 ];
