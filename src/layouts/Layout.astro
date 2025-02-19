@@ -4,12 +4,17 @@ interface Props {
 	description: string;
 }
 
-const { title, description } = Astro.props;
 import "../styles/global.css"; // Importa el CSS desde src/styles
+import LanguagePicker from "@/components/LanguagePicker.astro";
+import Header from "@/components/index/Header.astro";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -40,7 +45,10 @@ import "../styles/global.css"; // Importa el CSS desde src/styles
 	</head>
 	<body
 		class="bg-hub-background dark:bg-hub-background-dark md:flex md:justify-center"
-	></body><slot />
+	>
+		<!-- <Header /> -->
+		<slot />
+	</body>
 </html>
 
 <style>
@@ -49,3 +57,49 @@ import "../styles/global.css"; // Importa el CSS desde src/styles
 		/* background-color: #ffffff; */
 	}
 </style>
+
+<script>
+	const themeToggle = document.getElementById("toggle-theme");
+	const htmlElement = document.documentElement;
+	const storageKey = "theme"; // Clave para el almacenamiento local
+
+	// Función para aplicar el tema
+	function applyTheme(theme: string) {
+		if (theme === "dark") {
+			htmlElement.classList.add("dark");
+			localStorage.setItem(storageKey, "dark");
+		} else {
+			htmlElement.classList.remove("dark");
+			localStorage.setItem(storageKey, "light");
+		}
+	}
+
+	// Obtener el tema guardado o el preferido por el sistema
+	const savedTheme = localStorage.getItem(storageKey);
+	if (savedTheme) {
+		applyTheme(savedTheme);
+	} else {
+		const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
+			.matches
+			? "dark"
+			: "light";
+		applyTheme(preferredTheme);
+	}
+
+	// Escuchar cambios en el esquema de color del sistema
+	window
+		.matchMedia("(prefers-color-scheme: dark)")
+		.addEventListener("change", (event) => {
+			applyTheme(event.matches ? "dark" : "light");
+		});
+
+	// Alternar el tema manualmente con el botón
+	if (themeToggle) {
+		themeToggle.addEventListener("click", () => {
+			const newTheme = htmlElement.classList.contains("dark")
+				? "light"
+				: "dark";
+			applyTheme(newTheme);
+		});
+	}
+</script>
