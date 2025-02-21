@@ -12,6 +12,7 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/utils";
+import Tooltip from "../Tooltip.astro";
 
 //para cambiar entre idiomas y traducir rutas
 const lang = getLangFromUrl(Astro.url);
@@ -24,7 +25,7 @@ const translatePath = useTranslatedPath(lang);
   <div class="flex gap-2 flex-wrap">
     <SocialPill
       class="px-4 gap-1 font-medium text-sm text-white dark:text-white bg-sky-500 hover:bg-sky-400 w-auto group"
-      href={translatePath("/dsdsfsd")}
+      href={translatePath("/")}
       target="_self"
     >
       Resume
@@ -32,33 +33,42 @@ const translatePath = useTranslatedPath(lang);
         class="size-4 transition duration-300 ease-in-out group-hover:rotate-45"
       />
     </SocialPill>
-    <SocialPill
-      href="https://portfolio.justcoddev.com"
-      class=""
-      target="_blank"
-    >
-      <Web class="size-4" />
-    </SocialPill>
-    <SocialPill
-      href="https://www.github.com/justcoddev"
-      class=""
-      target="_blank"
-    >
-      <GitHub class="size-4" />
-    </SocialPill>
-    <SocialPill
-      href="https://www.linkedin.com/in/justcoddev"
-      class=""
-      target="_blank"
-    >
-      <LinkedIn class="size-4" />
-    </SocialPill>
-    <SocialPill
-      href="https://www.instagram.com/justcoddev"
-      class=""
-      target="_blank"
-    >
-      <Instagram class="size-4" />
-    </SocialPill>
+    <Tooltip tooltip="Portfolio">
+      <SocialPill
+        href="https://portfolio.justcoddev.com"
+        class=""
+        target="_blank"
+      >
+        <Web class="size-4" />
+      </SocialPill>
+    </Tooltip>
+
+    <Tooltip tooltip="GitHub">
+      <SocialPill
+        href="https://www.github.com/justcoddev"
+        class=""
+        target="_blank"
+      >
+        <GitHub class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    <Tooltip tooltip="LinkedIn">
+      <SocialPill
+        href="https://www.linkedin.com/in/justcoddev"
+        class=""
+        target="_blank"
+      >
+        <LinkedIn class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    <Tooltip tooltip="Instagram">
+      <SocialPill
+        href="https://www.instagram.com/justcoddev"
+        class=""
+        target="_blank"
+      >
+        <Instagram class="size-4" />
+      </SocialPill>
+    </Tooltip>
   </div>
 </aside>

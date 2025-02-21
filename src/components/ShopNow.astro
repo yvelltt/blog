@@ -1,8 +1,12 @@
 ---
+import { getI18N } from "@/i18n";
 import CardDocuments from "../components/CardDocuments.astro";
 import NoDataCard from "../components/NoDataCard.astro";
 // import { cardsData } from "../data/educationhub.js";
 const cardsData: any[] = [];
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div class="flex flex-col gap-y-3">
@@ -20,8 +24,8 @@ const cardsData: any[] = [];
       ))
     ) : (
       <NoDataCard
-        message="We are working on the products!"
-        subtitle="For now, there are no products available, but we will have something special for you soon."
+        message={i18n.SHOP_NOW.empty.message}
+        subtitle={i18n.SHOP_NOW.empty.message2}
         imageSrc="/img/notion/white/my-notion-face-transparent_15.png"
       />
     )

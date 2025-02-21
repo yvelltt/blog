@@ -1,8 +1,12 @@
 ---
+import { getI18N } from "@/i18n";
 import CardDocuments from "../components/CardDocuments.astro";
 import NoDataCard from "../components/NoDataCard.astro";
 // import { cardsData } from "../data/educationhub.js";
 const cardsData: any[] = [];
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div class="flex flex-col gap-y-3">
@@ -20,8 +24,8 @@ const cardsData: any[] = [];
       ))
     ) : (
       <NoDataCard
-        message="Oops, there is no data to display."
-        subtitle="But don't worry, there is always something interesting waiting for you!"
+        message={i18n.EDUCATION_HUB.empty.message}
+        subtitle={i18n.EDUCATION_HUB.empty.message2}
         imageSrc="/img/notion/white/my-notion-face-transparent_8.png"
       />
     )

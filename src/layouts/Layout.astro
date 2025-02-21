@@ -5,8 +5,7 @@ interface Props {
 }
 
 import "../styles/global.css"; // Importa el CSS desde src/styles
-import LanguagePicker from "@/components/LanguagePicker.astro";
-import Header from "@/components/index/Header.astro";
+
 import { getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
