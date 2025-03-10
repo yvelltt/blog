@@ -1,6 +1,6 @@
 export const cardsData = [
   {
-    id: "doc-1",
+    id: "car-1",
     url: "www.tabler.io",
     href: "https://tabler.io/icons",
     title: "Tabler Icons",
@@ -145,6 +145,26 @@ export const cardsData = [
     href: "https://www.tailwindcss-animated.com/",
     title: "Tailwind CSS Animated",
     subtitle: "Extended animation utilities for Tailwind CSS",
+    imageSrc: "/img/notion/white/my-notion-face-transparent_9.png",
+    imageAlt: "Logo de Web",
+
+  },
+  {
+    id: "card-16",
+    url: "flexboxlabs.netlify.app",
+    href: "https://flexboxlabs.netlify.app/",
+    title: "Flexbox Labs",
+    subtitle: "A visual tool for experimenting with flexbox layouts.",
+    imageSrc: "/img/notion/white/my-notion-face-transparent_9.png",
+    imageAlt: "Logo de Web",
+
+  },
+  {
+    id: "card-17",
+    url: "fontsource.org",
+    href: "https://fontsource.org/",
+    title: "Fontsource",
+    subtitle: "Download and self-host 1500+ open-source fonts in neatly bundled NPM packages. Access a comprehensive library of web typefaces for free.",
     imageSrc: "/img/notion/white/my-notion-face-transparent_9.png",
     imageAlt: "Logo de Web",
 
