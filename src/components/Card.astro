@@ -1,6 +1,11 @@
 ---
+import { getI18N } from "@/i18n";
 import ArrowUpRight from "../icons/ArrowUpRight.astro";
 import NewBadge from "./NewBadge.astro";
+
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const {
   id = "",
@@ -32,12 +37,12 @@ const {
   {
     isNew && (
       <div
-        class=" animate-pulse absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-sky-500
+        class=" animate-pulse absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 bg-sky-500
        text-white 
        text-xs 
        font-semibold px-2 py-0.5 rounded-full shadow-md z-10"
       >
-        New
+        {i18n.PROJECTS.BADGE.NEW}
       </div>
     )
   }

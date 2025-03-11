@@ -7,35 +7,40 @@ import SectionContainer from "./SectionContainer.astro";
 import EducationHub from "./EducationHub.astro";
 import FunHobbies from "./FunHobbies.astro";
 import ShopNow from "./ShopNow.astro";
+import { getI18N } from "@/i18n";
+
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div class="flex flex-col">
   <nav
-    class="flex gap-1 text-hub-inactive rounded-full border-[1px] p-[2px] border-hub-border dark:border-hub-border-dark bg-hub-background-nav dark:bg-hub-background-nav whitespace-nowrap overflow-x-auto scrollbar-hide md:w-max"
+    class="flex gap-1 text-hub-inactive rounded-full border-[1px] p-[2px] border-hub-border dark:border-hub-border-dark bg-hub-background-nav dark:bg-hub-background-nav whitespace-nowrap overflow-x-auto scrollbar-hide"
   >
     <NavButton class="tab-btn" aria-label="btn-projects" data-target="projects"
-      >Projects</NavButton
+      >{i18n.NAVBAR.PROJECTS}</NavButton
     >
     <NavButton class="tab-btn" aria-label="btn-Articles" data-target="articles"
-      >Articles</NavButton
+      >{i18n.NAVBAR.ARTICLES}</NavButton
     >
     <NavButton
       class="tab-btn"
       aria-label="btn-projects"
-      data-target="booksMarks">BooksMarks</NavButton
+      data-target="booksMarks">{i18n.NAVBAR.BOOKSMARKS}</NavButton
     >
     <NavButton
       class="tab-btn"
       aria-label="btn-projects"
-      data-target="educationHub">Education Hub</NavButton
+      data-target="educationHub">{i18n.NAVBAR.EDUCATION_HUB}</NavButton
     >
     <NavButton
       class="tab-btn"
       aria-label="btn-projects"
-      data-target="funHobbies">Fun Hobbies</NavButton
+      data-target="funHobbies">{i18n.NAVBAR.FUN_HOBBIES}</NavButton
     >
     <NavButton class="tab-btn" aria-label="btn-funHobbies" data-target="shopNow"
-      >Shop Now</NavButton
+      >{i18n.NAVBAR.SHOP_NOW}</NavButton
     >
   </nav>
 

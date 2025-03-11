@@ -1,8 +1,12 @@
 ---
+import { getI18N } from "@/i18n";
 import CardDocuments from "../components/CardDocuments.astro";
 import NoDataCard from "../components/NoDataCard.astro";
 import { cardsData } from "../data/funhobbies.js";
 // const cardsData: any[] = [];
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div class="flex flex-col gap-y-3">
@@ -21,8 +25,8 @@ import { cardsData } from "../data/funhobbies.js";
       ))
     ) : (
       <NoDataCard
-        message="Oops, there's nothing fun to show."
-        subtitle="But don't worry, there's always something interesting waiting for you!"
+        message={i18n.FUN_HOBBIES.empty.message}
+        subtitle={i18n.FUN_HOBBIES.empty.message2}
         imageSrc="/img/notion/white/my-notion-face-transparent_9.png"
       />
     )

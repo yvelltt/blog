@@ -1,9 +1,15 @@
 ---
+import { getI18N } from "@/i18n";
 import IconChevronDown from "../../icons/IconChevronDown.astro";
 import IconMoon from "../../icons/IconMoon.astro";
 import IconShare2 from "../../icons/IconShare2.astro";
 import IconSun from "../../icons/IconSun.astro";
 import HeroButton from "../HeroButton.astro";
+import LanguagePicker from "../LanguagePicker.astro";
+
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div>
@@ -26,48 +32,18 @@ import HeroButton from "../HeroButton.astro";
         <IconSun class="size-5 dark:hidden" />
         <IconMoon class="size-5 hidden dark:inline" />
       </HeroButton>
+
+      <div class="">
+        <LanguagePicker />
+      </div>
     </div>
   </div>
   <div class="mt-4">
     <h1 class="font-medium text-2xl text-hub-title dark:text-hub-title-dark">
-      Edison Cruz
+      {i18n.HERO.NAME}
     </h1>
     <p class="text-base text-hub-subtitle dark:text-hub-subtitle-dark">
-      Software Engineer
+      {i18n.HERO.TITLE}
     </p>
   </div>
 </div>
-
-<script>
-  const themeToggle = document.getElementById("toggle-theme");
-  const htmlElement = document.documentElement;
-
-  // Detectar el esquema de color del sistema y aplicarlo al cargar la página
-  const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
-    .matches
-    ? "dark"
-    : "light";
-  if (preferredTheme === "dark") {
-    htmlElement.classList.add("dark");
-  } else {
-    htmlElement.classList.remove("dark");
-  }
-
-  // Escuchar cambios en el esquema de color del sistema
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (event) => {
-      if (event.matches) {
-        htmlElement.classList.add("dark");
-      } else {
-        htmlElement.classList.remove("dark");
-      }
-    });
-
-  // Alternar el tema manualmente con el botón
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      htmlElement.classList.toggle("dark");
-    });
-  }
-</script>
