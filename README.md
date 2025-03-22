@@ -36,6 +36,17 @@ Personal Hub is a template designed to centralize and organize personal or profe
 
 ## Installation
 
+You can use this template in two ways:
+
+### 1. Quick Start (Recommended)
+
+Create a new project using this template with:
+
+   ```bash
+npm create astro@latest -- --template itsteddydev/hub-itsteddydev
+   ```
+
+### 2. Manual Installation
 Follow these steps to install and run the project locally:
 
 1. **Clone the repository**:
