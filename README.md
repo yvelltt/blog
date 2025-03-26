@@ -1,9 +1,7 @@
 # Personal Hub
 
 
-[![Version](https://img.shields.io/github/package-json/v/itsteddydev/hub-itsteddydev)](https://github.com/itsteddydev/hub-itsteddydev)
-
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/github/package-json/v/itsteddydev/hub-itsteddydev)](https://github.com/itsteddydev/hub-itsteddydev) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Astro Theme](https://img.shields.io/badge/Astro-Theme-blue?logo=astro)](https://astro.build/themes/details/personal-hub-a-customizable-personal-link/)
 
 ![Project Logo](public/img/cover/personal_hub.jpg)
 
