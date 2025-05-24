@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh"> <head><meta charset="UTF-8"><meta name="description" content="Justcoddev, Chelsea 開發筆記, 軟體工程師, 程式設計, 科技, 個人主頁, 職涯, 推薦"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/img/my.svg"><meta name="generator" content="Astro v5.8.0"><meta property="og:title" content="Chelsea 開發筆記 - Justcoddev"><meta property="og:description" content="Justcoddev, Chelsea 開發筆記, 軟體工程師, 程式設計, 科技, 個人主頁, 職涯, 推薦"><meta property="og:image" content="/img/my.svg"><meta property="og:url" content="https://hub.justcoddev.com/"><meta name="twitter:card" content="Justcoddev, Chelsea 開發筆記, 軟體工程師, 程式設計, 科技, 個人主頁, 職涯, 推薦"><meta name="twitter:title" content="Chelsea 開發筆記 - Justcoddev"><meta name="twitter:description" content="Justcoddev, Chelsea 開發筆記, 軟體工程師, 程式設計, 科技, 個人主頁, 職涯, 推薦"><meta name="twitter:image" content="/img/my.svg"><title>Chelsea 開發筆記 - Justcoddev</title><link rel="stylesheet" href="/_astro/_id_.CM_YBdWO.css">
+<!DOCTYPE html><html lang="zh"> <head><meta charset="UTF-8"><meta name="description" content="關於進度上的做法。"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/img/my.svg"><meta name="generator" content="Astro v5.8.0"><meta property="og:title" content="SSE、MQTT、輪迴查詢 - Chelsea Dev Notebook - Justcoddev"><meta property="og:description" content="關於進度上的做法。"><meta property="og:image" content="/img/my.svg"><meta property="og:url" content="https://hub.justcoddev.com/"><meta name="twitter:card" content="關於進度上的做法。"><meta name="twitter:title" content="SSE、MQTT、輪迴查詢 - Chelsea Dev Notebook - Justcoddev"><meta name="twitter:description" content="關於進度上的做法。"><meta name="twitter:image" content="/img/my.svg"><title>SSE、MQTT、輪迴查詢 - Chelsea Dev Notebook - Justcoddev</title><link rel="stylesheet" href="/_astro/_id_.CM_YBdWO.css">
 <style>.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}.scrollbar-hide::-webkit-scrollbar{display:none}
 </style></head> <body class="bg-hub-background dark:bg-hub-background-dark md:flex md:justify-center">  <main class="mx-6 mt-4
 		md:max-w-[1000px]
@@ -22,7 +22,7 @@ hover:bg-white/10 transition" --> <div class=""> <div class="relative group"> <b
 gap-x-2 py-1 px-2 md:py-2 md:px-4 text-xs md:text-base bg-white/5
 hover:bg-white/10 transition" --> <div class="absolute right-0 w-24 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"> <!-- <div
     class="absolute right-0 w-32 bg-white dark:bg-gray-900 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-  > --> <ul class="text-right"> <li> <a href="/" class="text-center px-4
+  > --> <ul class="text-right"> <li> <a href="/articles/article1.zh.md/" class="text-center px-4
       py-2
       text-sm
       w-auto
@@ -87,22 +87,41 @@ hover:bg-white/10 transition" -->  <!-- opacity-0 invisible --> <div class="abso
       dark:bg-hub-background-dark
       border-[1px]
       dark:border-hub-border-dark
-      hover:dark:bg-hub-background-nav-dark dark:hover:text-white"> LinkedIn </span> </div> </div> </div> </aside>  </section> <section class="section  my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <div class="flex flex-col"> <nav class="flex gap-1 text-hub-inactive rounded-full border-[1px] p-[2px] border-hub-border dark:border-hub-border-dark bg-hub-background-nav dark:bg-hub-background-nav-dark whitespace-nowrap overflow-x-auto scrollbar-hide"> <button class="tab-btn aria-label=&#34;btn-nav&#34;  px-4 py-2  text-sm  w-auto rounded-full
-    hover:text-hub-title" class="tab-btn" aria-label="btn-Articles" data-target="articles"> 文章 </button> <button class="tab-btn aria-label=&#34;btn-nav&#34;  px-4 py-2  text-sm  w-auto rounded-full
-    hover:text-hub-title" class="tab-btn" aria-label="btn-projects" data-target="notes"> 隨筆 </button> <button class="tab-btn aria-label=&#34;btn-nav&#34;  px-4 py-2  text-sm  w-auto rounded-full
-    hover:text-hub-title" class="tab-btn" aria-label="btn-projects" data-target="projects"> 專案 </button> </nav> <main class="mt-6"> <section id="projects" data-section="projects" class="section tab-content mt-0 mb-0 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <div class="flex flex-col gap-y-3"> <div class="rounded-lg flex flex-col items-center justify-center gap-4 border-[1px]
-   border-hub-border
-   dark:border-hub-border-dark
-   hover:drop-shadow-md
-   hover:bg-hub-background-nav
-    dark:bg-hub-background-nav-dark
-   hover:dark:bg-hub-background-dark
-   transition-all duration-300 py-6 px-4 text-center"> <!-- Imagen --> <img src="/img/my.svg" alt="Sin datos disponibles" class="w-24 h-24 object-contain"> <!-- Mensaje Principal --> <p class="text-sm text-hub-title dark:text-hub-title-dark font-medium"> 哎呀，目前沒有資料可顯示。 </p> <!-- Subtítulo --> <p class="text-xs text-hub-subtitle dark:text-hub-subtitle-dark"> 別擔心，總有有趣的事物等著你探索！ </p> </div> </div>  </section> <section id="articles" data-section="articles" class="section tab-content hidden mt-0 mb-0 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <div class="flex flex-col gap-y-3"> <a id="article1.zh.md" href="/zh/articles/article1.zh.md" class="rounded-lg flex items-stretch gap-4 border-[1px]
-  border-hub-border
-  dark:border-hub-border-dark
-  hover:drop-shadow-md
-  hover:bg-hub-background-nav
-   dark:bg-hub-background-nav-dark
-   hover:dark:bg-hub-background-dark" target="_blank" rel="noopener noreferrer"> <!-- Contenedor izquierdo: Imagen --> <div class="w-[92px] aspect-square rounded-l-lg overflow-hidden flex-shrink-0 border-hub-border
-        dark:border-hub-border-dark
-      dark:bg-hub-background"> <img src="/img/my.svg" alt="SSE、MQTT、輪迴查詢" class="w-full h-full object-cover"> </div> <!-- Contenedor derecho: Información --> <div class="flex flex-col justify-center py-3 pr-2 flex-grow gap-y-3"> <div> <h2 class="text-sm text-hub-title dark:text-hub-title-dark text-wrap"> SSE、MQTT、輪迴查詢 </h2> <h3 class="text-slate-700/90 dark:text-hub-subtitle-dark text-xs"> 關於進度上的做法。 </h3> </div> <small class="text-hub-subtitle dark:text-hub-subtitle-dark text-xs">/zh/articles/article1.zh.md</small> </div> </a> </div>  </section> <section id="notes" data-section="notes" class="section tab-content hidden mt-0 mb-0 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <div class="flex flex-col-reverse gap-y-3"> <article class="flex flex-col w-full p-4 bg-white/80 rounded-xl shadow-md border max-w-xl mx-auto my-3 hover:shadow-lg transition"> <div class="flex items-center gap-x-2"> <span class="font-bold text-gray-900">Chelsea</span> <span class="text-gray-500 text-sm">@chelsea</span> <span class="mx-2 text-gray-400 text-xs">·</span> <span class="text-gray-400 text-xs">2024-05-25</span> </div> <div class="mt-1 text-gray-800 whitespace-pre-line">寫程式就像蓋房子，專案的資料夾架構就是地基。有些簡潔明瞭，但難以擴充；有些複雜到像迷宮，自己都會迷路。我一直在找一種「能長大但不亂套」的架構方式。清楚的分類能讓團隊協作更順利、維護更輕鬆，也讓未來的自己少一點髮量損失。架構好壞，寫的當下看不出來，但半年後就會真相大白。#軟體工程 #資料夾架構</div>  </article> </div>  </section> </main> </div> <script type="module">const o=document.querySelectorAll(".tab-btn"),r=document.querySelectorAll(".tab-content"),a=document.querySelector('[data-target="projects"]');if(a){a.classList.add("bg-hub-background","drop-shadow-md","text-hub-title","font-bold","dark:text-hub-title-dark","dark:bg-hub-background-dark");const t=document.getElementById("projects");t&&t.classList.remove("hidden")}o.forEach(t=>{t.addEventListener("click",()=>{const d=t.getAttribute("data-target");if(o.forEach(e=>e.classList.remove("bg-hub-background","drop-shadow-md","text-hub-title","font-bold","dark:text-hub-title-dark","dark:bg-hub-background-dark")),t.classList.add("bg-hub-background","drop-shadow-md","text-hub-title","font-bold","dark:text-hub-title-dark","dark:bg-hub-background-dark"),r.forEach(e=>e.classList.add("hidden")),d){const e=document.getElementById(d);e&&e.classList.remove("hidden")}t.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})})});</script>  </section> </main>  <script type="module">const c=document.getElementById("toggle-theme"),a=document.documentElement,s="theme";function t(e){e==="dark"?(a.classList.add("dark"),localStorage.setItem(s,"dark")):(a.classList.remove("dark"),localStorage.setItem(s,"light"))}const o=localStorage.getItem(s);if(o)t(o);else{const e=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";t(e)}window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{t(e.matches?"dark":"light")});c&&c.addEventListener("click",()=>{const e=a.classList.contains("dark")?"light":"dark";t(e)});</script></body></html>
+      hover:dark:bg-hub-background-nav-dark dark:hover:text-white"> LinkedIn </span> </div> </div> </div> </aside>  </section> <section class="section flex flex-col gap-y-6 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <h1 class="text-3xl font-bold">SSE、MQTT、輪迴查詢</h1> <p class="text-gray-400">05/25/2024</p> <div class="prose"><h1>SSE、MQTT、輪迴查詢：三種進度追蹤的生存哲學</h1>
+<p>在日復一日的開發生活中，總會遇到一個老問題：「我要怎麼知道任務做完沒？」這個問題比「午餐要吃什麼」還常見。今天來聊聊三種進度追蹤方式：SSE（Server-Sent Events）、MQTT（Message Queuing Telemetry Transport）與輪迴查詢（polling）。</p>
+<hr>
+<p>先來總結圖表</p>
+<p>| 特性/技術         | SSE（Server-Sent Events）        | MQTT                                | 輪詢（Polling）                   |
+|------------------|----------------------------------|-------------------------------------|------------------------------------|
+| 連線方式         | 單向持久連線                     | 雙向持久連線（需 Broker）           | 重複短連線（定時請求）             |
+| 即時性           | 高                                | 高                                   | 低至中（取決於頻率）              |
+| 資源使用         | 中                                | 低                                   | 高                                 |
+| 複雜度           | 低（瀏覽器原生支援）              | 高（需 MQTT client 與 Broker）      | 低（但笨重）                       |
+| 穩定性           | 易中斷，需處理 reconnect           | 穩定，有 QoS 支援                    | 穩定，但效能差                     |
+| 雙向溝通         | 否                                | 是                                   | 可模擬（但不直觀）                 |
+| 適用場景         | 進度更新、即時通知                | IoT 設備、雙向通訊                   | 簡易實作、臨時交差                  |</p>
+<hr>
+<h2>1. SSE：我單向，但我持續輸出</h2>
+<p>SSE 最常見的使用情境大概是監視器或直播等應用，一路單向不斷推送資料。這個東西以前被我遺忘在技術列表底部，一旦用起來，不得了，非常適合進度條這種需要「持續更新但不用回應」的場景。<br>
+缺點是無法進行互動，而且斷線時需要額外實作 reconnect 機制。</p>
+<hr>
+<h2>2. MQTT：極輕量但多工</h2>
+<p>MQTT 採用主題訂閱與發布的模式，在過去的實作中非常常見。需要什麼資料，就訂閱對應的 topic。<br>
+優點是雙向溝通、延遲低、效能好；但缺點也明顯：</p>
+<ul>
+<li>漏掉的訊息無法回溯，需搭配資料庫保存。</li>
+<li>部署上需要額外的 Broker，如 Mosquitto，與 DevOps 合作的愉快程度會直接影響你是否痛苦。</li>
+</ul>
+<hr>
+<h2>3. 輪迴查詢：什麼都不會出錯，但就是錯了</h2>
+<p>輪詢（Polling）是最原始的方式。每隔幾秒發一個 request：「好了沒？」「好了沒？」「好了沒？」<br>
+聽起來像不耐煩的 PM，也像快變成 DDOS 的你。雖然簡單好寫，沒有技術門檻，但效能差，對伺服器與網路都是浪費。</p>
+<hr>
+<h2>結語：</h2>
+<p>根據公司現況來考慮，如果我能爭取到資源、或是 DevOps 人好說話，我會選擇 MQTT。但就學習曲線與開發效率來說，SSE 是相對簡潔又不太會出事的折衷方案。<br>
+至於輪詢？它是一種開發的過渡期，也是一種心累的象徵。</p>
+<hr>
+<blockquote>
+<p>技術選型的本質不是完美，而是<strong>哪種爛法你比較能忍受</strong>。</p>
+</blockquote>
+</div>  </section> </main>  <script type="module">const c=document.getElementById("toggle-theme"),a=document.documentElement,s="theme";function t(e){e==="dark"?(a.classList.add("dark"),localStorage.setItem(s,"dark")):(a.classList.remove("dark"),localStorage.setItem(s,"light"))}const o=localStorage.getItem(s);if(o)t(o);else{const e=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";t(e)}window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{t(e.matches?"dark":"light")});c&&c.addEventListener("click",()=>{const e=a.classList.contains("dark")?"light":"dark";t(e)});</script></body></html>
