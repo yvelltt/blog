@@ -2,8 +2,8 @@
 title: SSE, MQTT, and Polling: Three Philosophies of Progress Tracking
 description: Practical approaches to progress reporting in development.
 lang: en
-image: 
-date: 2024-05-25
+image: ""
+date: "2024-05-25"
 ---
 
 # SSE, MQTT, and Polling: Three Philosophies of Progress Tracking
