@@ -7,7 +7,6 @@ import { getCollection } from 'astro:content';
 
 const url = new URL(Astro.url);
 const lang = url.pathname.split('/')[2] || 'en';
-console.log("lang:", lang);
 const i18n = getI18N({ currentLocale: lang });
 let articles = await getCollection('articles');
 articles = articles.filter((article: any) => article.data.lang === lang);
@@ -16,8 +15,16 @@ articles = articles.filter((article: any) => article.data.lang === lang);
 
 <div class="flex flex-col gap-y-3">
   {
-    articles.length > 0 ? (
-      articles.map((article: any) => (
+    articles.length === 0
+    ? (
+        <NoDataCard
+          id={`article_nodata`}
+          message={i18n.ARTICLES?.empty?.message ?? "No articles found"}
+          subtitle={i18n.ARTICLES?.empty?.message2 ?? ""}
+          imageSrc="/blog/img/my.svg"
+        />
+      )
+    : articles.map((article: any) => (
         <CardDocuments
           id={article.id}
           url={`/blog/${lang}/articles/${article.id}`}
@@ -28,12 +35,5 @@ articles = articles.filter((article: any) => article.data.lang === lang);
           imageAlt={article.data.title}
         />
       ))
-    ) : (
-      <NoDataCard
-        message={i18n.ARTICLES?.empty?.message ?? "No articles found"}
-        subtitle={i18n.ARTICLES?.empty?.message2 ?? ""}
-        imageSrc="/blog/img/my.svg"
-      />
-    )
   }
 </div>

@@ -6,8 +6,6 @@ image: ""
 date: 2024-05-25
 ---
 
-# SSE、MQTT、輪迴查詢：三種進度追蹤的生存哲學
-
 在日復一日的開發生活中，總會遇到一個老問題：「我要怎麼知道任務做完沒？」這個問題比「午餐要吃什麼」還常見。今天來聊聊三種進度追蹤方式：SSE（Server-Sent Events）、MQTT（Message Queuing Telemetry Transport）與輪迴查詢（polling）。
 
 _________________

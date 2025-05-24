@@ -27,6 +27,7 @@ const i18n = getI18N({ currentLocale });
       ))
     ) : (
       <NoDataCard
+        id={`project_nodata`}
         message={i18n.PROJECTS.empty.message}
         subtitle={i18n.PROJECTS.empty.message2}
         imageSrc="/blog/img/my.svg"

@@ -12,15 +12,17 @@ const i18n = getI18N({ currentLocale });
 
 <div>
   <div class="flex justify-between">
-    <img
-      class="rounded-full size-24 border
+    <a href="/blog/">
+      <img
+        class="rounded-full size-24 border
       border-hub-border
       dark:border-hub-border-dark
       dark:bg-hub-background-nav-dark
       hover:dark:bg-hub-background-nav"
-      src="/blog/img/my.svg"
-      alt="Descripción de la imagen"
-    />
+        src="/blog/img/my.svg"
+        alt="Descripción de la imagen"
+      />
+    </a>
     <div class="flex gap-2 flex-wrap">
       <CircleButton aria-label="btn-theme" id="toggle-theme" class="size-8">
         <IconSun class="size-5 dark:hidden" />

@@ -6,8 +6,6 @@ image: ""
 date: "2024-05-25"
 ---
 
-# SSE, MQTT, and Polling: Three Philosophies of Progress Tracking
-
 In the daily grind of development, one eternal question always comes up: **“How do I know when the task is done?”**  
 It shows up more often than “What should I eat for lunch?”  
 Here, we’ll look at three common approaches to progress tracking: SSE (Server-Sent Events), MQTT (Message Queuing Telemetry Transport), and classic polling.
