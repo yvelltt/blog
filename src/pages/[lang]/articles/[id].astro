@@ -6,6 +6,7 @@ import { getCollection } from "astro:content";
 import { getI18N } from "@/i18n";
 import Layout from "@/layouts/Layout.astro";
 import { remark } from 'remark';
+import gfm from 'remark-gfm';
 import html from 'remark-html';
 
 export async function getStaticPaths() {
@@ -23,7 +24,7 @@ const { lang, id } = Astro.params;
 const i18n = getI18N({ lang });
 const articles = await getCollection("articles");
 const article = articles.find((a) => a.id === id && a.data.lang === lang);
-const markdown = remark().use(html);
+const markdown = remark().use(gfm).use(html);
 const htmlContent = await (await markdown.process(article.body)).toString();
 if (!article) throw new Error("Not found");
 ---
@@ -38,9 +39,9 @@ if (!article) throw new Error("Not found");
       <SocialMedia />
     </SectionContainer>
     <SectionContainer class="flex flex-col gap-y-6">
-      <h1 class="text-3xl font-bold">{article.data.title}</h1>
-      <p class="text-gray-400">{article.data.date ? new Date(article.data.date).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : ''}</p>
-      <div class="prose" set:html={htmlContent} />
+      <h1 class="text-3xl font-bold text-hub-title dark:text-hub-title-dark">{article.data.title}</h1>
+      <p class="text-hub-title dark:text-hub-title-dark">{article.data.date ? new Date(article.data.date).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : ''}</p>
+      <div class="text-hub-title dark:text-hub-title-dark markdown-body" set:html={htmlContent} />
     </SectionContainer>
   </main>
 </Layout>

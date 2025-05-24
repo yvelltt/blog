@@ -5,7 +5,7 @@ import NoDataCard from "../common/NoDataCard.astro";
 import { getCollection } from "astro:content";
 
 const url = new URL(Astro.url);
-const lang = url.pathname.split('/')[1] || 'en';
+const lang = url.pathname.split('/')[2] || 'en';
 console.log("lang:", lang);
 const i18n = getI18N({ currentLocale: lang });
 let cardsData = await getCollection('notes');
@@ -27,7 +27,7 @@ cardsData = cardsData.filter((article: any) => article.data.lang === lang);
       <NoDataCard
         message={i18n.EDUCATION_HUB.empty.message}
         subtitle={i18n.EDUCATION_HUB.empty.message2}
-        imageSrc="/img/my.svg"
+        imageSrc="/blog/img/my.svg"
       />
     )
   }

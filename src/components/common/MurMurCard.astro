@@ -10,15 +10,32 @@ const {
 ---
 
 <article
-  class="flex flex-col w-full p-4 bg-white/80 rounded-xl shadow-md border max-w-xl mx-auto my-3 hover:shadow-lg transition"
+  class="flex flex-col w-full p-4 dark:border-hub-border-dark
+  hover:drop-shadow-md
+  hover:bg-hub-background-nav
+   dark:bg-hub-background-nav-dark
+   hover:dark:bg-hub-background-dark rounded-xl shadow-md border max-w-xl mx-auto my-3 hover:shadow-lg transition"
 >
   <div class="flex items-center gap-x-2">
-    <span class="font-bold text-gray-900">{username}</span>
-    <span class="text-gray-500 text-sm">{handle}</span>
-    <span class="mx-2 text-gray-400 text-xs">·</span>
+    <span class="font-bold text-base text-hub-title dark:text-hub-title-dark"
+      >{username}</span
+    >
+    <span class="text-base text-hub-title dark:text-hub-title-dark text-sm"
+      >{handle}</span
+    >
+    <span class="mx-2 text-base text-hub-title dark:text-hub-title-dark text-xs"
+    ></span>
     <span class="text-gray-400 text-xs">{time}</span>
   </div>
-  <div class="mt-1 text-gray-800 whitespace-pre-line">{text}</div>
+  <div
+    class="mt-1 text-base border-hub-border
+        dark:border-hub-border-dark
+      dark:bg-hub-backgroundwhitespace-pre-line"
+  >
+  <span class="font-bold text-base text-hub-title dark:text-hub-title-dark"
+      >{text}</span
+    >
+  </div>
   {
     image && (
       <img
