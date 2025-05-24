@@ -1,63 +1,59 @@
 ---
-title: SSE, MQTT, and Polling: Three Philosophies of Progress Tracking
-description: Practical approaches to progress reporting in development.
-lang: en
+title: SSE、MQTT、輪迴查詢
+description: 關於進度上的做法。
+lang: zh
 image: ""
-date: "2024-05-25"
+date: 2024-05-25
 ---
 
-# SSE, MQTT, and Polling: Three Philosophies of Progress Tracking
+# SSE、MQTT、輪迴查詢：三種進度追蹤的生存哲學
 
-In the daily grind of development, one eternal question always comes up: **“How do I know when the task is done?”**  
-It shows up more often than “What should I eat for lunch?”  
-Here, we’ll look at three common approaches to progress tracking: SSE (Server-Sent Events), MQTT (Message Queuing Telemetry Transport), and classic polling.
+在日復一日的開發生活中，總會遇到一個老問題：「我要怎麼知道任務做完沒？」這個問題比「午餐要吃什麼」還常見。今天來聊聊三種進度追蹤方式：SSE（Server-Sent Events）、MQTT（Message Queuing Telemetry Transport）與輪迴查詢（polling）。
 
-| Feature / Tech     | SSE (Server-Sent Events)           | MQTT                                 | Polling                           |
-|--------------------|-------------------------------------|---------------------------------------|------------------------------------|
-| Connection Type     | One-way persistent connection       | Two-way persistent connection (needs broker) | Repeated short connections (interval requests) |
-| Real-time Capability| High                                | High                                  | Low to medium (depends on frequency) |
-| Resource Usage      | Medium                              | Low                                   | High                               |
-| Complexity          | Low (natively supported by browsers)| High (requires MQTT client + broker) | Low (but inefficient)              |
-| Stability           | Requires reconnection handling      | Stable with QoS                       | Stable, but inefficient            |
-| Bi-directional?     | No                                  | Yes                                   | Simulatable (requires extra logic) |
-| Best Use Cases      | Progress bars, live updates         | IoT communication, device-to-device  | Quick-and-dirty solutions          |
+_________________
 
----
+先來總結圖表
 
-## 1. SSE: One-Way, but Consistent
-
-SSE is great for pushing continuous data in one direction, like monitoring dashboards or video streams.  
-It’s particularly useful for situations like a progress bar that needs constant updates without requiring user interaction.  
-The downside? No bi-directional communication and you’ll have to implement reconnect logic if the connection drops. But hey, it’s simple, and sometimes that’s all we need.
+| 特性/技術         | SSE（Server-Sent Events）        | MQTT                                | 輪詢（Polling）                   |
+|------------------|----------------------------------|-------------------------------------|------------------------------------|
+| 連線方式         | 單向持久連線                     | 雙向持久連線（需 Broker）           | 重複短連線（定時請求）             |
+| 即時性           | 高                                | 高                                   | 低至中（取決於頻率）              |
+| 資源使用         | 中                                | 低                                   | 高                                 |
+| 複雜度           | 低（瀏覽器原生支援）              | 高（需 MQTT client 與 Broker）      | 低（但笨重）                       |
+| 穩定性           | 易中斷，需處理 reconnect           | 穩定，有 QoS 支援                    | 穩定，但效能差                     |
+| 雙向溝通         | 否                                | 是                                   | 可模擬（但不直觀）                 |
+| 適用場景         | 進度更新、即時通知                | IoT 設備、雙向通訊                   | 簡易實作、臨時交差                  |
 
 ---
 
-## 2. MQTT: Lightweight and Versatile
+## 1. SSE：我單向，但我持續輸出
 
-MQTT uses a publish/subscribe model with topics. In previous projects, it’s often the go-to when we need fast, lightweight, two-way communication.  
-Need data? Just subscribe to a topic.  
-However, messages aren’t retained unless you set up persistence elsewhere (like a database), and setting up a broker (e.g., Mosquitto) means DevOps gets involved—prepare for diplomacy.  
-Still, if you want flexibility and real-time response, this is a strong option.
+SSE 最常見的使用情境大概是監視器或直播等應用，一路單向不斷推送資料。這個東西以前被我遺忘在技術列表底部，一旦用起來，不得了，非常適合進度條這種需要「持續更新但不用回應」的場景。  
+缺點是無法進行互動，而且斷線時需要額外實作 reconnect 機制。
 
 ---
 
-## 3. Polling: Never Technically Wrong, Always Inefficient
+## 2. MQTT：極輕量但多工
 
-Polling is the oldest trick in the book. You send a request every few seconds:  
-"Is it done?" "Now?" "What about now?"  
-It’s simple to implement but taxing on the server. If left unchecked, it basically becomes a mild DDoS.  
-Useful in a pinch, but not elegant. Or efficient. Or… modern.
-
----
-
-## Conclusion:
-
-Depending on your company's infrastructure, available resources, and how friendly your DevOps team is, MQTT might be the ideal choice.  
-But in terms of learning curve and ease of use, SSE often strikes a good balance for front-end progress tracking.
-
-Polling? It’s what you use when you don’t have time to care.  
-It’s not wrong—it’s just a little sad.
+MQTT 採用主題訂閱與發布的模式，在過去的實作中非常常見。需要什麼資料，就訂閱對應的 topic。  
+優點是雙向溝通、延遲低、效能好；但缺點也明顯：  
+- 漏掉的訊息無法回溯，需搭配資料庫保存。  
+- 部署上需要額外的 Broker，如 Mosquitto，與 DevOps 合作的愉快程度會直接影響你是否痛苦。
 
 ---
 
-> Picking a technology isn’t about what’s perfect—it’s about **what kind of mess you’re willing to live with**.
+## 3. 輪迴查詢：什麼都不會出錯，但就是錯了
+
+輪詢（Polling）是最原始的方式。每隔幾秒發一個 request：「好了沒？」「好了沒？」「好了沒？」  
+聽起來像不耐煩的 PM，也像快變成 DDOS 的你。雖然簡單好寫，沒有技術門檻，但效能差，對伺服器與網路都是浪費。
+
+---
+
+## 結語：
+
+根據公司現況來考慮，如果我能爭取到資源、或是 DevOps 人好說話，我會選擇 MQTT。但就學習曲線與開發效率來說，SSE 是相對簡潔又不太會出事的折衷方案。  
+至於輪詢？它是一種開發的過渡期，也是一種心累的象徵。
+
+---
+
+> 技術選型的本質不是完美，而是**哪種爛法你比較能忍受**。
