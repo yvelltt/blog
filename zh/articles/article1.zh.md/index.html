@@ -2,11 +2,11 @@
 <style>.markdown-body{line-height:1.75;word-break:break-word;overflow-wrap:break-word;color:#222;font-size:1.1rem;padding:1.5rem 0}.markdown-body p{margin:0 0 1.2em;font-size:1.08em}.markdown-body b,.markdown-body strong{font-weight:700;color:#1a237e}.markdown-body i,.markdown-body em{font-style:italic;color:#512da8}.markdown-body h1{font-size:2em;margin:1.5em 0 .6em;font-weight:700;padding-bottom:.2em;color:#1565c0}.markdown-body h2{font-size:1.5em;margin:1.2em 0 .5em;font-weight:700;padding-bottom:.18em;color:#1976d2}.markdown-body h3{font-size:1.17em;margin:1em 0 .5em;font-weight:700;color:#1976d2}.markdown-body hr{border:none;border-top:2px dashed #e0e7ef;margin:2em 0;height:0;background:none;opacity:.85}.markdown-body table{border-collapse:separate;border-spacing:0;width:100%;margin-bottom:1.5rem;font-size:1rem;background:#f6f8fa;border-radius:12px;box-shadow:0 2px 8px #3c3c3c0a;overflow:hidden}.markdown-body th,.markdown-body td{border-bottom:1px solid #e1e4e8;padding:10px 16px;text-align:left;color:#223;background:none}.markdown-body th{background:#e9f1fb;font-weight:700;color:#1961a7;border-bottom:2px solid #bdd6ee}.markdown-body tr:last-child td{border-bottom:none}.markdown-body tr:nth-child(2n) td{background:#f0f4fa}@media (prefers-color-scheme: dark){.markdown-body table{background:#222a33;box-shadow:0 2px 10px #0003}.markdown-body th,.markdown-body td{border-bottom:1px solid #323d4d;color:#e8eef7}.markdown-body th{background:#1b3148;color:#7cc8fa;border-bottom:2px solid #385577}.markdown-body tr:nth-child(2n) td{background:#23314a}}
 </style></head> <body class="bg-hub-background dark:bg-hub-background-dark md:flex md:justify-center">  <main class="mx-6 mt-4
 		md:max-w-[1000px]
-		md:w-full"> <section class="section flex flex-col gap-y-6 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <div> <div class="flex justify-between"> <img class="rounded-full size-24 border
+		md:w-full"> <section class="section flex flex-col gap-y-6 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <div> <div class="flex justify-between"> <a href="/blog/"> <img class="rounded-full size-24 border
       border-hub-border
       dark:border-hub-border-dark
       dark:bg-hub-background-nav-dark
-      hover:dark:bg-hub-background-nav" src="/blog/img/my.svg" alt="Descripción de la imagen"> <div class="flex gap-2 flex-wrap"> <button class="size-8 aria-label=&#34;button-hero&#34; text-hub-inactive hover:text-hub-title rounded-full border-[1px] size-9 flex items-center justify-center 
+      hover:dark:bg-hub-background-nav" src="/blog/img/my.svg" alt="Descripción de la imagen"> </a> <div class="flex gap-2 flex-wrap"> <button class="size-8 aria-label=&#34;button-hero&#34; text-hub-inactive hover:text-hub-title rounded-full border-[1px] size-9 flex items-center justify-center 
   border-hub-border 
   dark:border-hub-border-dark 
   hover:drop-shadow-md 
@@ -87,8 +87,7 @@ hover:bg-white/10 transition" -->  <!-- opacity-0 invisible --> <div class="abso
       dark:bg-hub-background-dark
       border-[1px]
       dark:border-hub-border-dark
-      hover:dark:bg-hub-background-nav-dark dark:hover:text-white"> LinkedIn </span> </div> </div> </div> </aside>  </section> <section class="section flex flex-col gap-y-6 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <h1 class="text-3xl font-bold text-hub-title dark:text-hub-title-dark">SSE、MQTT、輪迴查詢</h1> <p class="text-hub-title dark:text-hub-title-dark">05/25/2024</p> <div class="text-hub-title dark:text-hub-title-dark markdown-body"><h1>SSE、MQTT、輪迴查詢：三種進度追蹤的生存哲學</h1>
-<p>在日復一日的開發生活中，總會遇到一個老問題：「我要怎麼知道任務做完沒？」這個問題比「午餐要吃什麼」還常見。今天來聊聊三種進度追蹤方式：SSE（Server-Sent Events）、MQTT（Message Queuing Telemetry Transport）與輪迴查詢（polling）。</p>
+      hover:dark:bg-hub-background-nav-dark dark:hover:text-white"> LinkedIn </span> </div> </div> </div> </aside>  </section> <section class="section flex flex-col gap-y-6 my-6 scroll-m-20 w-full mx-auto container xl:max-w-5xl md:max-w-2xl">  <h1 class="text-3xl font-bold text-hub-title dark:text-hub-title-dark">SSE、MQTT、輪迴查詢</h1> <p class="text-hub-title dark:text-hub-title-dark">05/25/2024</p> <div class="text-hub-title dark:text-hub-title-dark markdown-body"><p>在日復一日的開發生活中，總會遇到一個老問題：「我要怎麼知道任務做完沒？」這個問題比「午餐要吃什麼」還常見。今天來聊聊三種進度追蹤方式：SSE（Server-Sent Events）、MQTT（Message Queuing Telemetry Transport）與輪迴查詢（polling）。</p>
 <hr>
 <p>先來總結圖表</p>
 <table>
