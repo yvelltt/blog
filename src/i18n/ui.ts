@@ -1,6 +1,6 @@
 export const languages = {
   en: 'English',
-  es: 'Español',
+  zh: '繁中',
 };
 
 export const defaultLang = 'en';
@@ -12,9 +12,9 @@ export const ui = {
     'nav.about': 'About',
     'nav.404': '404-Not-Found',
   },
-  es: {
-    'nav.index': 'Inicio',
-    'nav.about': 'Acerca de',
-    'nav.404': '404-No-Encontrado',
-  },
+  zh: {
+    'nav.index': '首頁',
+    'nav.about': '關於',
+    'nav.404': '404-找不到',
+  }
 } as const;

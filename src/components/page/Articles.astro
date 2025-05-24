@@ -1,0 +1,40 @@
+---
+import { getI18N } from "@/i18n";
+import CardDocuments from "../common/CardDocuments.astro";
+import NoDataCard from "../common/NoDataCard.astro";
+import { getCollection } from 'astro:content';
+
+// 取得路由參數
+const { lang = "zh" } = Astro.params; // 預設中文
+
+const i18n = getI18N({ currentLocale: lang });
+
+// 取得對應語言的所有文章
+const articles = (await getCollection('articles'))
+  .filter(a => a.id.startsWith(`${lang}/`));
+console.log("DEBUG 篩選後:", articles.map(a => a.id));
+---
+
+<div class="flex flex-col gap-y-3">
+  {
+    articles.length > 0 ? (
+      articles.map((article) => (
+        <CardDocuments
+          id={article.id}
+          url={`/${lang}/articles/${article.data.slug}`}
+          href={`/${lang}/articles/${article.data.slug}`}
+          title={article.data.title}
+          subtitle={article.data.description}
+          imageSrc={article.data.image || "/img/my.svg"}
+          imageAlt={article.data.title}
+        />
+      ))
+    ) : (
+      <NoDataCard
+        message={i18n.ARTICLES?.empty?.message ?? "No articles found"}
+        subtitle={i18n.ARTICLES?.empty?.message2 ?? ""}
+        imageSrc="/img/my.svg"
+      />
+    )
+  }
+</div>

@@ -1,0 +1,25 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- 太空頭盔外罩 -->
+  <ellipse cx="90" cy="85" rx="70" ry="70" fill="#E3F2FD"/>
+  <!-- 頭盔玻璃 -->
+  <ellipse cx="90" cy="80" rx="55" ry="55" fill="#B3E5FC" />
+  <!-- 小鳥身體 -->
+  <ellipse cx="90" cy="115" rx="38" ry="32" fill="#4FC3F7" />
+  <!-- 右翅膀（三層） -->
+  <ellipse cx="128" cy="115" rx="16" ry="10" fill="#039BE5" />
+  <ellipse cx="132" cy="119" rx="12" ry="7" fill="#4FC3F7" />
+  <ellipse cx="134" cy="124" rx="8" ry="4.5" fill="#81D4FA" />
+  <!-- 左翅膀（三層） -->
+  <ellipse cx="52" cy="115" rx="16" ry="10" fill="#039BE5" />
+  <ellipse cx="48" cy="119" rx="12" ry="7" fill="#4FC3F7" />
+  <ellipse cx="46" cy="124" rx="8" ry="4.5" fill="#81D4FA" />
+  <!-- 鳥臉（在頭盔內） -->
+  <ellipse cx="90" cy="92" rx="19" ry="15" fill="#4FC3F7"/>
+  <!-- 眼睛（對稱） -->
+  <circle cx="83" cy="90" r="3" fill="#283593" />
+  <circle cx="97" cy="90" r="3" fill="#283593" />
+  <!-- 嘴巴 -->
+  <polygon points="90,98 86,94 94,94" fill="#FFEB3B" />
+  <!-- 太空服白色下半部 -->
+  <rect x="65" y="135" width="50" height="28" rx="15" fill="#fff" />
+</svg>

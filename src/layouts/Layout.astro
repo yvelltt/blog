@@ -21,15 +21,14 @@ const { title, description } = Astro.props;
 		<link
 			rel="icon"
 			type="image/svg+xml"
-			href="/img/notion/white/my-notion-face-transparent.png"
+			href="/img/my.svg"
 		/>
 		<meta name="generator" content={Astro.generator} />
-		<!-- <link rel="stylesheet" type="css" href="../styles/global.css " /> -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta
 			property="og:image"
-			content="/img/notion/white/my-notion-face-transparent.png"
+			content="/img/my.svg"
 		/>
 		<meta property="og:url" content="https://hub.justcoddev.com/" />
 		<meta name="twitter:card" content={description} />
@@ -37,7 +36,7 @@ const { title, description } = Astro.props;
 		<meta name="twitter:description" content={description} />
 		<meta
 			name="twitter:image"
-			content="/img/notion/white/my-notion-face-transparent.png"
+			content="/img/my.svg"
 		/>
 
 		<title>{title}</title>
@@ -45,24 +44,15 @@ const { title, description } = Astro.props;
 	<body
 		class="bg-hub-background dark:bg-hub-background-dark md:flex md:justify-center"
 	>
-		<!-- <Header /> -->
 		<slot />
 	</body>
 </html>
 
-<style>
-	body {
-		/* background-color: #101419; */
-		/* background-color: #ffffff; */
-	}
-</style>
-
 <script>
 	const themeToggle = document.getElementById("toggle-theme");
 	const htmlElement = document.documentElement;
-	const storageKey = "theme"; // Clave para el almacenamiento local
+	const storageKey = "theme";
 
-	// Función para aplicar el tema
 	function applyTheme(theme: string) {
 		if (theme === "dark") {
 			htmlElement.classList.add("dark");
@@ -73,7 +63,6 @@ const { title, description } = Astro.props;
 		}
 	}
 
-	// Obtener el tema guardado o el preferido por el sistema
 	const savedTheme = localStorage.getItem(storageKey);
 	if (savedTheme) {
 		applyTheme(savedTheme);
@@ -85,14 +74,12 @@ const { title, description } = Astro.props;
 		applyTheme(preferredTheme);
 	}
 
-	// Escuchar cambios en el esquema de color del sistema
 	window
 		.matchMedia("(prefers-color-scheme: dark)")
 		.addEventListener("change", (event) => {
 			applyTheme(event.matches ? "dark" : "light");
 		});
 
-	// Alternar el tema manualmente con el botón
 	if (themeToggle) {
 		themeToggle.addEventListener("click", () => {
 			const newTheme = htmlElement.classList.contains("dark")

@@ -1,0 +1,66 @@
+{
+  "SEO_TITLE": "Chelsea 開發筆記 - Justcoddev",
+  "SEO_KEYWORDS": "Justcoddev, Chelsea 開發筆記, 軟體工程師, 程式設計, 科技, 個人主頁, 職涯, 推薦",
+  "ERROR_404": {
+    "TITLE": "404 - 找不到頁面",
+    "DESCRIPTION": "找不到內容",
+    "BACK_HOMEPAGE_BTN": "返回首頁"
+  },
+  "HERO": {
+    "NAME": "Chelsea Chang",
+    "TITLE": "軟體工程師",
+    "DESCRIPTION": "我是一名熱愛學習與分享知識的軟體工程師，對科技、程式設計與軟體開發充滿熱情。總是在尋找新的挑戰和成長機會。"
+  },
+  "ABOUT": {
+    "TITLE": "關於",
+    "DESCRIPTION": "關於描述"
+  },
+  "NAVBAR": {
+    "ARTICLES": "文章",
+    "NOTES": "隨筆",
+    "PROJECTS": "專案"
+  },
+  "PROJECTS": {
+    "empty": {
+      "message": "哎呀，目前沒有專案可顯示。",
+      "message2": "別擔心，總有有趣的事物等著你探索！"
+    },
+    "BADGE": {
+      "NEW": "全新"
+    }
+  },
+  "ARTICLES": {
+    "empty": {
+      "message": "哎呀，目前沒有文章可顯示。",
+      "message2": "別擔心，總有有趣的事物等著你探索！"
+    }
+  },
+  "BOOKSMARKS": {
+    "empty": {
+      "message": "哎呀，目前沒有書籤可顯示。",
+      "message2": "別擔心，總有有趣的事物等著你探索！"
+    }
+  },
+  "EDUCATION_HUB": {
+    "empty": {
+      "message": "哎呀，目前沒有學習資源可顯示。",
+      "message2": "別擔心，總有有趣的事物等著你探索！"
+    }
+  },
+  "FUN_HOBBIES": {
+    "empty": {
+      "message": "哎呀，目前沒有興趣樂趣可顯示。",
+      "message2": "別擔心，總有有趣的事物等著你探索！"
+    }
+  },
+  "SHOP_NOW": {
+    "empty": {
+      "message": "哎呀，目前沒有商品可顯示。",
+      "message2": "別擔心，總有有趣的事物等著你探索！"
+    }
+  },
+  "NOT_DATA": {
+    "message": "哎呀，目前沒有資料可顯示。",
+    "message2": "別擔心，總有有趣的事物等著你探索！"
+  }
+}

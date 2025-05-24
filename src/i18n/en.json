@@ -1,13 +1,13 @@
 {
-  "SEO_TITLE": "ItsTeddyDev Hub - Resource and Content Center",
-  "SEO_DESCRIPTION": "Explore books, articles, hobbies, and educational resources at Justcoddev's personal hub. Discover the best of my career and my recommendations.",
+  "SEO_TITLE": "Chelsea Dev Notebook - Justcoddev",
+  "SEO_KEYWORDS": "Justcoddev, Chelsea Dev Notebook, Software Engineer, Programming, Technology, Personal Hub, Career, Recommendations",
   "ERROR_404": {
     "TITLE": "404 - Not Found",
     "DESCRIPTION": "Not Found",
     "BACK_HOMEPAGE_BTN": "Go Back"
   },
   "HERO": {
-    "NAME": "Teddy Summers",
+    "NAME": "Chelsea Chang",
     "TITLE": "Software Engineer",
     "DESCRIPTION": "I'm a software engineer who loves to learn and share knowledge. I'm passionate about technology, programming, and software development. I'm always looking for new challenges and opportunities to grow."
   },
@@ -16,12 +16,9 @@
     "DESCRIPTION": "About DESCRIPTION"
   },
   "NAVBAR": {
-    "PROJECTS": "Projects",
     "ARTICLES": "Articles",
-    "BOOKSMARKS": "BooksMarks",
-    "EDUCATION_HUB": "Education Hub",
-    "FUN_HOBBIES": "Fun Hobbies",
-    "SHOP_NOW": "Shop Now"
+    "NOTES": "Notes",
+    "PROJECTS": "Projects"
   },
   "PROJECTS": {
     "empty": {
