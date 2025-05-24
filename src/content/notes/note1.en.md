@@ -2,7 +2,7 @@
 title: 論專案資料夾架構筆記
 description: 論專案資料夾架構筆記
 lang: en
-image: 
+image: ""
 date: 2024-05-25
 ---
 
