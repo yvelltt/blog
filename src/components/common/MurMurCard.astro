@@ -1,0 +1,31 @@
+---
+const {
+  username = "Chelsea",
+  handle = "@chelsea",
+  time = "",
+  text = "這是一則短貼文，可以放任何有趣想法或感受，也可以是學習小結！",
+  image,
+  actions = true,
+} = Astro.props;
+---
+
+<article
+  class="flex flex-col w-full p-4 bg-white/80 rounded-xl shadow-md border max-w-xl mx-auto my-3 hover:shadow-lg transition"
+>
+  <div class="flex items-center gap-x-2">
+    <span class="font-bold text-gray-900">{username}</span>
+    <span class="text-gray-500 text-sm">{handle}</span>
+    <span class="mx-2 text-gray-400 text-xs">·</span>
+    <span class="text-gray-400 text-xs">{time}</span>
+  </div>
+  <div class="mt-1 text-gray-800 whitespace-pre-line">{text}</div>
+  {
+    image && (
+      <img
+        src={image}
+        alt="tweet image"
+        class="mt-2 max-h-48 rounded-xl border"
+      />
+    )
+  }
+</article>

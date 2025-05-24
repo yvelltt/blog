@@ -21,7 +21,7 @@ const i18n = getI18N({ currentLocale });
     <NavButton
       class="tab-btn"
       aria-label="btn-projects"
-      data-target="educationHub">{i18n.NAVBAR.NOTES}</NavButton
+      data-target="notes">{i18n.NAVBAR.NOTES}</NavButton
     >
     <NavButton class="tab-btn" aria-label="btn-projects" data-target="projects"
       >{i18n.NAVBAR.PROJECTS}</NavButton
@@ -32,10 +32,12 @@ const i18n = getI18N({ currentLocale });
     <SectionContainer id="projects" class="tab-content mt-0 mb-0">
       <Projects />
     </SectionContainer>
+
     <SectionContainer id="articles" class="tab-content hidden mt-0 mb-0">
       <Articles />
     </SectionContainer>
-    <SectionContainer id="educationHub" class="tab-content hidden mt-0 mb-0">
+
+    <SectionContainer id="notes" class="tab-content hidden mt-0 mb-0">
       <Note />
     </SectionContainer>
   </main>
@@ -54,7 +56,7 @@ const i18n = getI18N({ currentLocale });
       "text-hub-title",
       "font-bold",
       "dark:text-hub-title-dark",
-      "dark:bg-hub-background-dark",
+      "dark:bg-hub-background-dark"
     );
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
@@ -74,8 +76,8 @@ const i18n = getI18N({ currentLocale });
           "text-hub-title",
           "font-bold",
           "dark:text-hub-title-dark",
-          "dark:bg-hub-background-dark",
-        ),
+          "dark:bg-hub-background-dark"
+        )
       );
       button.classList.add(
         "bg-hub-background",
@@ -83,7 +85,7 @@ const i18n = getI18N({ currentLocale });
         "text-hub-title",
         "font-bold",
         "dark:text-hub-title-dark",
-        "dark:bg-hub-background-dark",
+        "dark:bg-hub-background-dark"
       );
 
       // Oculta todas las secciones

@@ -1,26 +1,26 @@
 ---
 import { getI18N } from "@/i18n";
-import CardDocuments from "../common/CardDocuments.astro";
+import MurMurCard from "../common/MurMurCard.astro";
 import NoDataCard from "../common/NoDataCard.astro";
-import { cardsData } from "../../data/note.js";
-// const cardsData: any[] = [];
-//Para cambiar idioma de textos
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+import { getCollection } from "astro:content";
+
+const url = new URL(Astro.url);
+const lang = url.pathname.split('/')[1] || 'en';
+console.log("lang:", lang);
+const i18n = getI18N({ currentLocale: lang });
+let cardsData = await getCollection('notes');
+cardsData = cardsData.filter((article: any) => article.data.lang === lang);
+
 ---
 
 <div class="flex flex-col-reverse gap-y-3">
   {
     cardsData.length > 0 ? (
-      cardsData.map((card) => (
-        <CardDocuments
-          id={card.id}
-          url={card.url}
-          href={card.href}
-          title={card.title}
-          subtitle={card.subtitle}
-          imageSrc={card.imageSrc}
-          imageAlt={card.imageAlt}
+      cardsData.map((murmur) => (
+        <MurMurCard
+          time={murmur.data.date.toISOString().split('T')[0]}
+          text={murmur.body}
+          image={murmur.data.image}
         />
       ))
     ) : (

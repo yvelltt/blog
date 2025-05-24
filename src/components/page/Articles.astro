@@ -4,25 +4,24 @@ import CardDocuments from "../common/CardDocuments.astro";
 import NoDataCard from "../common/NoDataCard.astro";
 import { getCollection } from 'astro:content';
 
-// 取得路由參數
-const { lang = "zh" } = Astro.params; // 預設中文
 
+const url = new URL(Astro.url);
+const lang = url.pathname.split('/')[1] || 'en';
+console.log("lang:", lang);
 const i18n = getI18N({ currentLocale: lang });
+let articles = await getCollection('articles');
+articles = articles.filter((article: any) => article.data.lang === lang);
 
-// 取得對應語言的所有文章
-const articles = (await getCollection('articles'))
-  .filter(a => a.id.startsWith(`${lang}/`));
-console.log("DEBUG 篩選後:", articles.map(a => a.id));
 ---
 
 <div class="flex flex-col gap-y-3">
   {
     articles.length > 0 ? (
-      articles.map((article) => (
+      articles.map((article: any) => (
         <CardDocuments
           id={article.id}
-          url={`/${lang}/articles/${article.data.slug}`}
-          href={`/${lang}/articles/${article.data.slug}`}
+          url={`/${lang}/articles/${article.id}`}
+          href={`/${lang}/articles/${article.id}`}
           title={article.data.title}
           subtitle={article.data.description}
           imageSrc={article.data.image || "/img/my.svg"}

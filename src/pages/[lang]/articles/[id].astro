@@ -1,0 +1,46 @@
+---
+import SectionContainer from "@/components/common/SectionContainer.astro";
+import SocialMedia from "@/components/common/SocialMedia.astro";
+import Theme from "@/components/common/Theme.astro";
+import { getCollection } from "astro:content";
+import { getI18N } from "@/i18n";
+import Layout from "@/layouts/Layout.astro";
+import { remark } from 'remark';
+import html from 'remark-html';
+
+export async function getStaticPaths() {
+  let articles = await getCollection("articles");
+  articles = articles.map((article) => ({
+    params: {
+      lang: article.data.lang,
+      id: article.id,
+    },
+  }));
+  return articles;
+}
+
+const { lang, id } = Astro.params;
+const i18n = getI18N({ lang });
+const articles = await getCollection("articles");
+const article = articles.find((a) => a.id === id && a.data.lang === lang);
+const markdown = remark().use(html);
+const htmlContent = await (await markdown.process(article.body)).toString();
+if (!article) throw new Error("Not found");
+---
+
+
+<Layout title={`${article.data.title} - ${i18n.SEO_TITLE}`} description={article.data.description}>
+  <main class="mx-6 mt-4
+		md:max-w-[1000px]
+		md:w-full">
+    <SectionContainer class="flex flex-col gap-y-6">
+      <Theme />
+      <SocialMedia />
+    </SectionContainer>
+    <SectionContainer class="flex flex-col gap-y-6">
+      <h1 class="text-3xl font-bold">{article.data.title}</h1>
+      <p class="text-gray-400">{article.data.date ? new Date(article.data.date).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : ''}</p>
+      <div class="prose" set:html={htmlContent} />
+    </SectionContainer>
+  </main>
+</Layout>
