@@ -6,7 +6,7 @@ image: ""
 date: 2024-05-28
 ---
 
-[Project](!https://github.com/yvelltt/massive-file-import-api)
+[Project](https://github.com/yvelltt/massive-file-import-api)
 
 When I first handled millions of records, the project faced a unique limitation: all processing logic had to be executed through APIs—no local scripts or direct database access were allowed. Additionally, the database schema was fixed and could not be modified. As a result, the only area where I could optimize was in the preprocessing layer.
 
