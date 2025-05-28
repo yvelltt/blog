@@ -1,6 +1,6 @@
 ---
-title: Experience handling millions of records: How to improve preprocessing performance.
-description: Experience handling millions of records: How to improve preprocessing performance.
+title: Experience handling millions of records:How to improve preprocessing performance.
+description: Experience handling millions of records:How to improve preprocessing performance.
 lang: en
 image: ""
 date: 2024-05-28
@@ -16,7 +16,7 @@ At the beginning, due to my lack of experience with large-scale data, I used a s
 
 #### Turning Point: Stepping Back to Observe Data Patterns
 
-When I hit a bottleneck, I decided to stop coding and step back to observe the structure of the data itself. I asked myself: “Does the data follow any patterns or rules?” The answer was yes! I discovered several opportunities to optimize the logic by leveraging predictable patterns in the data:
+When I hit a bottleneck, I decided to stop coding and step back to observe the structure of the data itself. I asked myself: "Does the data follow any patterns or rules?" The answer was yes! I discovered several opportunities to optimize the logic by leveraging predictable patterns in the data:
 
 - Some columns had values within a fixed or predictable range.
 
